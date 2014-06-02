@@ -1,0 +1,4 @@
+C:\Users\agasteovski.TRICODE\Documents\GitHub\stickers\Stickers\Stickers\bin\Stickers.dll
+C:\Users\agasteovski.TRICODE\Documents\GitHub\stickers\Stickers\Stickers\bin\Stickers.pdb
+C:\Users\agasteovski.TRICODE\Documents\GitHub\stickers\Stickers\Stickers\obj\Debug\Stickers.dll
+C:\Users\agasteovski.TRICODE\Documents\GitHub\stickers\Stickers\Stickers\obj\Debug\Stickers.pdb
