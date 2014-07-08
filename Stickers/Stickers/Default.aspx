@@ -41,10 +41,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li>Caca glupci</li>
-                            <li><a class="show-2 templatemo_page2" href="#">Caciiii</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">Services</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">About Us</a></li>
+                            <li style="color: #FFFFFF; font-weight: bold; font-size: 20px; text-transform: uppercase; font-style: italic;">Albums</li>
+                            <li style="color: #FFFFFF; font-weight: bold; font-size: 20px; text-transform: uppercase; font-style: italic;">Collectors</li>
+                            <li style="color: #FFFFFF; font-weight: bold; font-size: 20px; text-transform: uppercase; font-style: italic;">Blog</li>
+                            <li style="color: #FFFFFF; font-weight: bold; font-size: 20px; text-transform: uppercase; font-style: italic;">My Profile</li>
                             <li><a class="show-5 templatemo_page5" href="#">Contact Us</a></li>
                         </ul>
                     </div>
@@ -61,7 +61,7 @@
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
                         <h1>
-                            Concept</h1>
+                            Stickers collector</h1>
                     </a>
                     <!-- /.logo -->
                 </div>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Etiam sed felis</h3>
+                                    FIFA World Cup Brasil 2014 - Panini</h3>
                             </div>
                         </div>
                         <!-- /.gallery-item -->
@@ -102,7 +102,7 @@
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Nulla sagittis</h3>
+                                    Angelina Ballerina</h3>
                             </div>
                         </div>
                         <!-- /.gallery-item -->
@@ -119,7 +119,7 @@
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Quisque lacinia</h3>
+                                    Action Man</h3>
                             </div>
                         </div>
                         <!-- /.gallery-item -->
@@ -136,7 +136,7 @@
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Venenatis</h3>
+                                   UEFA Champions League 2013-2014</h3>
                             </div>
                         </div>
                         <!-- /.gallery-item -->
