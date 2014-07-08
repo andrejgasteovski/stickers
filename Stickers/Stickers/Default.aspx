@@ -41,7 +41,7 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li>Caca glupci</li>
+                            <li><a class="show-1 templatemo_home" href="#">Gallery</a></li>
                             <li><a class="show-2 templatemo_page2" href="#">Products</a></li>
                             <li><a class="show-3 templatemo_page3" href="#">Services</a></li>
                             <li><a class="show-4 templatemo_page4" href="#">About Us</a></li>
