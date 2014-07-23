@@ -40,6 +40,10 @@ namespace Stickers
                 {
                     connection.Close();
                 }
+
+                tbUsername.Attributes.Add("onfocus", "if(this.value.toLowerCase() == 'username') this.value = '';");
+                tbPassword.Attributes.Add("onfocus", "this.value = '';");
+                tbPassword.Attributes["type"] = "password";
             }
             
         }

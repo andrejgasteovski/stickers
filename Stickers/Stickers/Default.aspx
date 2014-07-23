@@ -22,7 +22,8 @@
     
     <!-- ovde go pisuvam nasiot css -->    
     <style type="text/css">
-         .login{
+         .loginTextBox
+         {
 	        font-size: 12px;
 	        padding: 1px;
 	        color: rgb(139, 139, 139);
@@ -30,30 +31,59 @@
 	        width: 100px;
 	        line-height: 0px;
           }
+          
+          .loginButton
+          {
+            width: 50px;
+            height: 18px;
+            line-height: 0px;
+            color: #b10021;
+            font-size: 12px;
+          }
+          
+          .signUp
+          {
+            font-size: 11px;
+            color: White;    
+          }
+          
     </style>
 
 
 </head>
 <body>
     <form id="form1" runat="server">
-    
-    <!-- vo ovoj div se polinjata za login -->
-    <div style="float: right; margin: 10px;">
-            <asp:Label ID="Label1" Text="Login" runat="server" ForeColor="White"></asp:Label>
-            <asp:TextBox id="tbUsername" cssclass="login" runat="server" Width="100px" Height="20px" Text="username" ForeColor="Black"></asp:TextBox>
-            <asp:TextBox ID="tbPassword" cssclass="login" runat="server" Width="100px" Height="20px" Text="password" TextMode="Password"></asp:TextBox>
-    </div>
-
-
+  
     <div class="site-header">
+
+        <table style="float: right; margin: 10px 10px -15px 10px;">
+        <!-- vo ovoj div se polinjata za login -->
+            <tr>
+                <td>
+                    <div>
+                            <asp:TextBox id="tbUsername" cssclass="loginTextBox" runat="server" Text="username"></asp:TextBox>
+                            <asp:TextBox ID="tbPassword" cssclass="loginTextBox" runat="server" Text="password"></asp:TextBox>
+                            <asp:Button id="btnLogin" runat="server" Text="Login" CssClass="loginButton"/>
+                    </div>
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <asp:HyperLink href="#" runat="server" CssClass="signUp">Not a member? Sign up for free</asp:HyperLink>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
         <div class="main-navigation">
             <div class="responsive_menu">
                 <ul>
-                    <li><a class="show-1 templatemo_home" href="#">Gallery</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">Products</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">Services</a></li>
-                    <li><a class="show-4 templatemo_page4" href="#">About Us</a></li>
-                    <li><a class="show-5 templatemo_page5" href="#">Contact Us</a></li>
+                    <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
+                    <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
+                    <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
+                    <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
                 </ul>
             </div>
             <div class="container">
@@ -64,11 +94,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li><a class="show-1 templatemo_home" href="#">Gallery</a></li>
-                            <li><a class="show-2 templatemo_page2" href="#">Products</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">Services</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">About Us</a></li>
-                            <li><a class="show-5 templatemo_page5" href="#">Contact Us</a></li>
+                            <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
+                            <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
+                            <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
+                            <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
