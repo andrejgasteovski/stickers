@@ -19,9 +19,32 @@
     <link rel="stylesheet" href="css/templatemo_style.css" />
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    
+    <!-- ovde go pisuvam nasiot css -->    
+    <style type="text/css">
+         .login{
+	        font-size: 12px;
+	        padding: 1px;
+	        color: rgb(139, 139, 139);
+	        height: 20px;
+	        width: 100px;
+	        line-height: 0px;
+          }
+    </style>
+
+
 </head>
 <body>
     <form id="form1" runat="server">
+    
+    <!-- vo ovoj div se polinjata za login -->
+    <div style="float: right; margin: 10px;">
+            <asp:Label ID="Label1" Text="Login" runat="server" ForeColor="White"></asp:Label>
+            <asp:TextBox id="tbUsername" cssclass="login" runat="server" Width="100px" Height="20px" Text="username" ForeColor="Black"></asp:TextBox>
+            <asp:TextBox ID="tbPassword" cssclass="login" runat="server" Width="100px" Height="20px" Text="password" TextMode="Password"></asp:TextBox>
+    </div>
+
+
     <div class="site-header">
         <div class="main-navigation">
             <div class="responsive_menu">
@@ -72,6 +95,9 @@
         <!-- /.container -->
     </div>
     <!-- /.site-header -->
+
+
+
     <div id="menu-container">
         <div class="content homepage" id="menu-1">
             <div class="container-fluid">
@@ -173,8 +199,8 @@
                                     Modern</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
-                    </div>
+               
+                    </div> 
                     <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-6">
                         <div class="gallery-item">
@@ -301,6 +327,8 @@
         <br />
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
     </div>
+
+
     <!-- /#menu-container -->
     <div id="templatemo_footer">
         <div class="container">
@@ -317,6 +345,7 @@
     </div>
     <!-- /.templatemo_footer -->
     <!-- Scripts -->
+    
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="js/modernizr.js"></script>
@@ -324,6 +353,7 @@
     <script type="text/javascript" src="js/tabs.js"></script>
     <script type="text/javascript" src="js/jquery.lightbox.js"></script>
     <script type="text/javascript" src="js/templatemo_custom.js"></script>
+    
     </form>
 </body>
 </html>
