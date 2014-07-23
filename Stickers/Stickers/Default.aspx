@@ -70,7 +70,8 @@
             <tr>
                 <td>
                     <div>
-                        <asp:HyperLink href="#" runat="server" CssClass="signUp">Not a member? Sign up for free</asp:HyperLink>
+                        <asp:HyperLink NavigateUrl="signUp.aspx" runat="server" CssClass="signUp" 
+                            ClientIDMode="AutoID">Not a member? Sign up for free</asp:HyperLink>
                     </div>
                 </td>
             </tr>
@@ -112,8 +113,7 @@
                 <div class="col-md-12 text-center">
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
-                        <h1>
-                            Concept</h1>
+                        <h1>Stickers</h1>
                     </a>
                     <!-- /.logo -->
                 </div>
