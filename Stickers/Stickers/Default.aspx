@@ -47,6 +47,11 @@
             color: White;    
           }
           
+          .rightCell
+          {
+            padding-left: 20px;    
+          }
+
     </style>
 
 
@@ -127,25 +132,45 @@
 
 
 
-    <div id="menu-container">
+    <div id="menu-container" style="margin-left: auto; margin-right: auto; width: 65%;">
         <div class="content homepage" id="menu-1">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2 col-sm-6 col-md-offset-1">
+
+                    <!-- prv red, slika 1 -->
+                    <div class="col-md-2 col-sm-6 col-md-offset-1" style="width: 26.666667%;">
                         <div class="gallery-item">
-                            <img src="images/gallery/gallery-item1.jpg" alt="image 1">
+
+                            <asp:Image runat="server" ImageUrl="images/gallery/fifa-world-cup.jpg"/>
                             <div class="overlay">
-                                <a href="images/gallery/gallery-item1.jpg" data-rel="lightbox" class="fa fa-expand">
+                                <a href="images/gallery/fifa-world-cup.jpg" data-rel="lightbox" class="fa fa-expand">
                                 </a>
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Etiam sed felis</h3>
+                                    FIFA World Cup 2014</h3>
                             </div>
                         </div>
                         <!-- /.gallery-item -->
                     </div>
-                    <!-- /.col-md-2 -->
+                    
+
+                    <!-- tekst do slika 1 -->
+                    <div class="col-md-2 col-sm-6 col-md-offset-1" style="margin-left: 0px;">
+                        <asp:Table runat="server" CellPadding="20">
+                            <asp:TableRow>
+                                <asp:TableCell> <asp:Label runat="server">Publisher:</asp:Label> </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label1" runat="server">Panini</asp:Label> </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell> <asp:Label ID="Label2" runat="server">Stickers:</asp:Label> </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label3" runat="server">158</asp:Label> </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
+                    </div>
+                    
+                    <!-- prv red, slika 2 -->
+                    <!--
                     <div class="col-md-2 col-sm-6">
                         <div class="gallery-item">
                             <div class="image">
@@ -160,77 +185,32 @@
                                     Nulla sagittis</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
                     </div>
+                    -->
+
+                  
+                    <!-- vtor red, slika 1 -->
                     <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
+                    <div class="col-md-2 col-sm-6 col-md-offset-2" style="margin-left: -43.66666%; margin-top: 19%; width: 26.666667%;">
                         <div class="gallery-item">
                             <div class="image">
                                 <div class="overlay">
-                                    <a href="images/gallery/gallery-item3.jpg" data-rel="lightbox" class="fa fa-expand">
+                                    <a href="images/gallery/uefa-champions-league.jpg" data-rel="lightbox" class="fa fa-expand">
                                     </a>
                                 </div>
-                                <img src="images/gallery/gallery-item3.jpg" alt="image 3">
+                                <asp:Image ID="Image1" runat="server" ImageUrl="images/gallery/uefa-champions-league.jpg"/>
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Quisque lacinia</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item4.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item4.jpg" alt="image 4">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    Venenatis</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item5.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item5.jpg" alt="image 5">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    Sed sed nisi</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6 col-md-offset-2">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item6.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item6.jpg" alt="image 6">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    Modern</h3>
+                                    UEFA Champions League 2014/15</h3>
                             </div>
                         </div>
                
                     </div> 
-                    <!-- /.col-md-2 -->
+
+
+                    <!-- vtor red, slika 2 -->
+                    <!--
                     <div class="col-md-2 col-sm-6">
                         <div class="gallery-item">
                             <div class="image">
@@ -245,43 +225,12 @@
                                     Elegant</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
                     </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item8.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item8.jpg" alt="image 8">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    HTML5 CSS3</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item9.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item9.jpg" alt="image 9">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    New Design</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
+                    -->
+
+                    
+                    <!-- treti red, slika 1 -->
+                    <!-- 
                     <div class="col-md-2 col-sm-6 col-md-offset-3">
                         <div class="gallery-item">
                             <div class="image">
@@ -296,9 +245,12 @@
                                     Download</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
                     </div>
-                    <!-- /.col-md-2 -->
+                    -->
+
+
+                    <!-- treti red, slika 2 -->
+                    <!--
                     <div class="col-md-2 col-sm-6">
                         <div class="gallery-item">
                             <div class="image">
@@ -313,25 +265,10 @@
                                     Responsive</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
                     </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item12.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item12.jpg" alt="image 12">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    Template</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
+                    -->
+
+
                     <!-- /.col-md-2 -->
                 </div>
                 <!-- /.row -->
