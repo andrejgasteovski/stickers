@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signUp.aspx.cs" Inherits="Stickers.signUp" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Stickers</title>
@@ -16,62 +15,19 @@
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/templatemo_misc.css" />
+    <link rel="stylesheet" href="css/signup.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/templatemo_style.css" />
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
-    
-    <!-- ovde go pisuvam nasiot css -->    
+    <!-- ovde go pisuvam nasiot css -->
     <style type="text/css">
-         .loginTextBox
-         {
-	        font-size: 12px;
-	        padding: 1px;
-	        color: rgb(139, 139, 139);
-	        height: 20px;
-	        width: 100px;
-	        line-height: 0px;
-          }
-          
-          .loginButton
-          {
-            width: 50px;
-            height: 18px;
-            line-height: 0px;
-            color: #b10021;
-            font-size: 12px;
-          }
-          
-          .signUp
-          {
-            font-size: 11px;
-            color: White;    
-          }
-          
+        
     </style>
-
-
 </head>
 <body>
     <form id="form1" runat="server">
-  
     <div class="site-header">
-
-        <table style="float: right; margin: 10px 10px -15px 10px;">
-        <!-- vo ovoj div se polinjata za login -->
-            <tr>
-                <td>
-                    <div>
-                            <asp:TextBox id="tbUsername" cssclass="loginTextBox" runat="server" Text="username"></asp:TextBox>
-                            <asp:TextBox ID="tbPassword" cssclass="loginTextBox" runat="server" Text="password"></asp:TextBox>
-                            <asp:Button id="btnLogin" runat="server" Text="Login" CssClass="loginButton"/>
-                    </div>
-                 </td>
-            </tr>
-          
-        </table>
-
-
         <div class="main-navigation">
             <div class="responsive_menu">
                 <ul>
@@ -107,7 +63,8 @@
                 <div class="col-md-12 text-center">
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
-                        <h1>Sign up</h1>
+                        <h1>
+                            Sign up</h1>
                     </a>
                     <!-- /.logo -->
                 </div>
@@ -118,18 +75,58 @@
         <!-- /.container -->
     </div>
     <!-- /.site-header -->
-
-
-
-    
-
     <!-- /#menu-container -->
     <div id="templatemo_footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <p>
-                    </p>
+                    <table align="center">
+                        <tr class="row">
+                            <td>
+                                <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>
+                                <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>
+                                <asp:Label ID="Label4" runat="server" Text="Date of birth:" Font-Bold="True"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>
+                                <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server">
+                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddlMonth" runat="server">
+                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddlYear" runat="server">
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>
+                                <asp:TextBox ID="tbLocation" placeholder="Location" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>
+                                <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>
+                                <asp:TextBox ID="tbPassword" placeholder="Password" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>
+                                <asp:Button CssClass="button" ID="btnSubmit" runat="server" Text="Submit" 
+                                BackColor="#B00B02" ForeColor="White" Font-Bold="True" />
+                        </tr>
+                    </table>
                 </div>
                 <!-- /.col-md-12 -->
             </div>
@@ -139,7 +136,6 @@
     </div>
     <!-- /.templatemo_footer -->
     <!-- Scripts -->
-    
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="js/modernizr.js"></script>
@@ -147,7 +143,6 @@
     <script type="text/javascript" src="js/tabs.js"></script>
     <script type="text/javascript" src="js/jquery.lightbox.js"></script>
     <script type="text/javascript" src="js/templatemo_custom.js"></script>
-    
     </form>
 </body>
 </html>
