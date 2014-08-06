@@ -17,6 +17,7 @@ namespace Stickers
         {
             if (!this.IsPostBack)
             {
+                /*
                 SqlConnection connection = new SqlConnection();
                 connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
 
@@ -40,82 +41,22 @@ namespace Stickers
                 {
                     connection.Close();
                 }
+                */
 
-                tbUsername.Attributes.Add("onfocus", "if(this.value.toLowerCase() == 'username') this.value = '';");
-                tbPassword.Attributes.Add("onfocus", "this.value = '';");
-                tbPassword.Attributes["type"] = "password";
-            }
-            
-        }
-        
-
-
-
-        /*
-        protected void importStickers(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source=194.149.135.68,64314;Initial Catalog=dbpictransfer;Persist Security Info=True;User ID=teamPic;Password=T3@mP!c";
-
-            try
-            {
+                //tbUsername.Attributes.Add("onfocus", "if(this.value.toLowerCase() == 'e-mail') this.value = '';");
+                //tbPassword.Attributes.Add("onfocus", "this.value = '';");
+                //tbPassword.Attributes["type"] = "password";   
                 
-                using (StreamReader sr = new StreamReader("C:\\Users\\agasteovski.TRICODE\\Desktop\\stickers.txt"))
-                {
-                    int i = 0;
-                    int stickerNum = 0;
-                    string stickerName = "";
-                    string playerName = "";
-                    string country = "";
-                    while(sr.Peek() >= 0)
-                    {
-                        String line = sr.ReadLine();
-                        if (i % 4 == 0)
-                        {
-                            stickerNum = Convert.ToInt32(line);
-                        }
-                        else if (i % 4 == 1)
-                        {
-                            playerName = line;
-                        }
-                        else if (i % 4 == 2)
-                        {
-                            country = line;
-                        }
-                        else
-                        {
-                            stickerName = String.Format("{0, -20}{1}", country, playerName);
-                            System.Diagnostics.Debug.WriteLine("Number: " + stickerNum + "\tName: " + stickerName);
-                            
-                            SqlCommand command = new SqlCommand();
-                            command.Connection = connection;
-                            command.CommandText = "insert into dbo.sticker (albumID, number, name) values(2, @number, @name)";
-                            command.Parameters.AddWithValue("number", stickerNum);
-                            command.Parameters.AddWithValue("name", stickerName);
+            }            
+        }
 
-                            try
-                            {
-                                connection.Open();
-                                command.ExecuteNonQuery();
-                            }
-                            catch (Exception err)
-                            {
-                                lblMessage.Text = err.Message;
-                            }
-                            finally
-                            {
-                                connection.Close();
-                            }
-                        }   
-                        i++;
-                    }     
-                }
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(err.Message);
-            }
-        }*/
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
+
+            Session["username"] = username;
+            Response.Redirect("Profile.aspx");
+        }
     }
 }

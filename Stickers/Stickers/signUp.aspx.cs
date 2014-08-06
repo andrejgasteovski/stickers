@@ -22,7 +22,7 @@ namespace Stickers
                     ddlYear.Items.Add(i.ToString());
                 }
                 tbEmail.Text = "Enter your email:";
-                tbEmail.OnFocus+=OnFocus.EventHandle(RemoveText);
+                //tbEmail.OnFocus += OnFocus.EventHandle(RemoveText);
             }
         }
         public void RemoveText(object sender, EventArgs e)
