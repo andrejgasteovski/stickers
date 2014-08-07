@@ -10,3 +10,4 @@ C:\Users\agasteovski.TRICODE\Documents\GitHub\stickers\Stickers\Stickers\obj\Deb
 C:\Users\agasteovski.TRICODE\Documents\GitHub\stickers\Stickers\Stickers\obj\Debug\Stickers.csproj.GenerateResource.Cache
 C:\Users\Caci\Documents\GitHub\stickers\Stickers\Stickers\obj\Debug\Stickers.Properties.Resources.resources
 C:\Users\Caci\Documents\GitHub\stickers\Stickers\Stickers\obj\Debug\Stickers.csproj.GenerateResource.Cache
+C:\Users\Caci\Documents\GitHub\stickers\Stickers\Stickers\obj\Debug\Stickers.csprojResolveAssemblyReference.cache
