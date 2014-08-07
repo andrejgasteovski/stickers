@@ -56,7 +56,9 @@
         {
             margin: 10px auto 30px auto;
 	        text-align: left;
-	        border: 3px #b10021;
+	        border: 2px solid #b10021;
+	        border-radius:10px;
+	        padding:10px;
         }
         .accordionHeader:hover
         {
@@ -77,6 +79,9 @@
             padding: 5px;
             margin-top: 5px;
             cursor: pointer;*/
+            margin-top:3px;
+            border: 1px solid #b10021;
+            border-radius:10px;
             font-weight: bold;
             padding: 5px 20px;
             position: relative;
@@ -99,6 +104,7 @@
         
         .accordionHeaderSelected
         {
+             background: #ffd8df url(images/arrow_down.png) no-repeat 98% center;
             /*    border: 1px solid #2F4F4F;
             color: white;
             background-color: #5078B3;
@@ -109,6 +115,8 @@
             margin-top: 5px;
             cursor: pointer;
             */
+            border: 1px solid #b10021;
+             border-radius:10px;
              padding: 5px 20px;
             position: relative;
             z-index: 20;
@@ -116,7 +124,6 @@
             display: block;
             height: 30px;
             cursor: pointer;
-            background: #ffd8df;
             color: #b10021;
             text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
             box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
@@ -142,8 +149,8 @@
             padding: 5px;
             padding-top: 10px;
             background: rgba(255, 255, 255, 0.5);*/
-            border: 1px #b10021;
-             border-bottom: none;
+            border: 1px solid #b10021;
+             border-radius:10px;
             background-color: #ffecef;
             border-top: none;
             padding: 5px;
