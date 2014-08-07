@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/templatemo_misc.css" />
+    <link rel="stylesheet" href="css/accordion.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/templatemo_style.css" />
     <!-- Favicons -->
@@ -52,120 +53,7 @@
             padding-left: 20px;
         }
         
-        .accordion
-        {
-            margin: 10px auto 30px auto;
-	        text-align: left;
-	        border: 2px solid #b10021;
-	        border-radius:10px;
-	        padding:10px;
-        }
-        .accordionHeader:hover
-        {
-            background: #fff;
-            font-weight: bold;
-            color: #b10021;
-        }
-        
-        .accordionHeader
-        {
-            /*
-            border: 1px solid #b10021;
-            color: white;
-            background-color: #b10021;
-            font-family: Arial, Sans-Serif;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 5px;
-            margin-top: 5px;
-            cursor: pointer;*/
-            margin-top:3px;
-            border: 1px solid #b10021;
-            border-radius:10px;
-            font-weight: bold;
-            padding: 5px 20px;
-            position: relative;
-            z-index: 20;
-            display: block;
-            height: 30px;
-            cursor: pointer;
-            color: #777;
-            text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
-            background: #ffffff;
-            background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));
-            background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-            background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-            background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-            background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
-            box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 1px 0px 0px 0px rgba(255,255,255,0.9) inset, 0px 2px 2px rgba(0,0,0,0.1);
-        }
-        
-        .accordionHeaderSelected
-        {
-             background: #ffd8df url(images/arrow_down.png) no-repeat 98% center;
-            /*    border: 1px solid #2F4F4F;
-            color: white;
-            background-color: #5078B3;
-            font-family: Arial, Sans-Serif;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 5px;
-            margin-top: 5px;
-            cursor: pointer;
-            */
-            border: 1px solid #b10021;
-             border-radius:10px;
-             padding: 5px 20px;
-            position: relative;
-            z-index: 20;
-            font-weight: bold;
-            display: block;
-            height: 30px;
-            cursor: pointer;
-            color: #b10021;
-            text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
-            box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
-        }
-        
-        .accordionHeaderSelected + .accordionHeader:hover:after
-        {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            right: 13px;
-            top: 7px;
-            background: transparent url(images/arrow_down.png) no-repeat center center;
-        }
-        
-        .accordionContent
-        {
-           /* background-color: #b10021;
-            color: White;
-            border: 1px #b10021;
-            border-top: none;
-            padding: 5px;
-            padding-top: 10px;
-            background: rgba(255, 255, 255, 0.5);*/
-            border: 1px solid #b10021;
-             border-radius:10px;
-            background-color: #ffecef;
-            border-top: none;
-            padding: 5px;
-            padding-top: 10px;
-	        margin-top: -1px;
-	        overflow: hidden;
-	        height: 0px;
-	        position: relative;
-	        z-index: 10;
-	        -webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-	        -moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-	        -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-	        -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-	        transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-        }
+      
     </style>
 </head>
 <body>
