@@ -1,0 +1,73 @@
+  .accordion
+        {
+            margin: 10px auto 30px auto;
+	        text-align: left;
+	        padding:10px;
+        }
+        .accordionHeader:hover
+        {
+            background: #b10021;
+            font-weight: bold;
+            color: #fff;
+			 box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
+        }
+        
+        .accordionHeader
+        {
+            margin-top:3px;
+            border: 1px solid #b10021;
+            border-radius:10px;
+            font-weight: bold;
+            padding: 5px 20px;
+            position: relative;
+            z-index: 20;
+            display: block;
+            cursor: pointer;
+            color: #fff;
+            text-shadow: 0.4px 0.4px 0.4px rgba(255,255,255,0.8);
+            background: #ff4f70;
+            background: -moz-linear-gradient(top, #ff4f70 1%,#b10021 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ff4f70), color-stop(100%, #b10021));
+            background: -webkit-linear-gradient(top, #ff4f70 1%, #b10021 100%);
+            background: -o-linear-gradient(top,#ff4f70 1%, #b10021 100%);
+            background: -ms-linear-gradient(top, #ff4f70 1%,#b10021 100%);
+            background: linear-gradient(top, #ff4f70 1%,#b10021 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4f70', endColorstr='#b10021',GradientType=0 );
+             box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
+        }
+        
+        .accordionHeaderSelected
+        {
+             background: #b10021 url(images/arrow_down.png) no-repeat 98% center;
+            border: 1px solid #b10021;
+             border-radius:10px;
+             padding: 5px 20px;
+            position: relative;
+            z-index: 20;
+            font-weight: bold;
+            display: block;
+            cursor: pointer;
+            color: #fff;
+            text-shadow: 0px 0.4px 0.4px rgba(255,255,255, 0.6);
+            box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
+        }
+        
+        .accordionContent
+        {
+            border: 1px solid #b10021;
+             border-radius:10px;
+            background-color: #ffecef;
+            border-top: none;
+            padding: 5px;
+            padding-top: 10px;
+	        margin-top: -1px;
+	        overflow: hidden;
+	        height: 0px;
+	        position: relative;
+	        z-index: 10;
+	        -webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	        -moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	        -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	        -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	        transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+        }

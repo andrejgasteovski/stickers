@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Stickers.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Stickers.Default"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,18 +19,78 @@
     <link rel="stylesheet" href="css/templatemo_style.css" />
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    
+    <!-- ovde go pisuvam nasiot css -->    
+    <style type="text/css">
+         .loginTextBox
+         {
+	        font-size: 12px;
+	        padding: 1px;
+	        color: rgb(139, 139, 139);
+	        height: 20px;
+	        width: 100px;
+	        line-height: 0px;
+          }
+          
+          .loginButton
+          {
+            width: 50px;
+            height: 18px;
+            line-height: 0px;
+            color: #b10021;
+            font-size: 12px;
+          }
+          
+          .signUp
+          {
+            font-size: 11px;
+            color: White;    
+          }
+          
+          .rightCell
+          {
+            padding-left: 20px;    
+          }
+
+    </style>
+
+
 </head>
 <body>
     <form id="form1" runat="server">
+  
     <div class="site-header">
+
+        <table style="float: right; margin: 10px 10px -15px 10px;">
+        <!-- vo ovoj div se polinjata za login -->
+            <tr>
+                <td>
+                    <div>
+                            <asp:TextBox ID="tbUsername" cssclass="loginTextBox" runat="server" Text="e-mail"></asp:TextBox>
+                            <asp:TextBox ID="tbPassword" cssclass="loginTextBox" runat="server" Text="password"></asp:TextBox>
+                            <asp:Button id="btnLogin" runat="server" Text="Login" CssClass="loginButton" 
+                                onclick="btnLogin_Click"/>
+                    </div>
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <asp:HyperLink NavigateUrl="signUp.aspx" runat="server" CssClass="signUp" 
+                            ClientIDMode="AutoID">Not a member? Sign up for free</asp:HyperLink>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
         <div class="main-navigation">
             <div class="responsive_menu">
                 <ul>
-                    <li><a class="show-1 templatemo_home" href="#">Gallery</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">Products</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">Services</a></li>
-                    <li><a class="show-4 templatemo_page4" href="#">About Us</a></li>
-                    <li><a class="show-5 templatemo_page5" href="#">Contact Us</a></li>
+                    <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
+                    <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
+                    <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
+                    <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
                 </ul>
             </div>
             <div class="container">
@@ -41,11 +101,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li><a class="show-1 templatemo_home" href="#">Gallery</a></li>
-                            <li><a class="show-2 templatemo_page2" href="#">Products</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">Services</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">About Us</a></li>
-                            <li><a class="show-5 templatemo_page5" href="#">Contact Us</a></li>
+                            <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
+                            <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
+                            <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
+                            <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
@@ -60,8 +119,7 @@
                 <div class="col-md-12 text-center">
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
-                        <h1>
-                            Concept</h1>
+                        <h1>Stickers</h1>
                     </a>
                     <!-- /.logo -->
                 </div>
@@ -72,25 +130,48 @@
         <!-- /.container -->
     </div>
     <!-- /.site-header -->
-    <div id="menu-container">
+
+
+
+    <div id="menu-container" style="margin-left: auto; margin-right: auto; width: 65%;">
         <div class="content homepage" id="menu-1">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2 col-sm-6 col-md-offset-1">
+
+                    <!-- prv red, slika 1 -->
+                    <div class="col-md-2 col-sm-6 col-md-offset-1" style="width: 26.666667%;">
                         <div class="gallery-item">
-                            <img src="images/gallery/gallery-item1.jpg" alt="image 1">
+
+                            <asp:Image runat="server" ImageUrl="images/gallery/fifa-world-cup.jpg"/>
                             <div class="overlay">
-                                <a href="images/gallery/gallery-item1.jpg" data-rel="lightbox" class="fa fa-expand">
+                                <a href="images/gallery/fifa-world-cup.jpg" data-rel="lightbox" class="fa fa-expand">
                                 </a>
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Etiam sed felis</h3>
+                                    FIFA World Cup 2014</h3>
                             </div>
                         </div>
                         <!-- /.gallery-item -->
                     </div>
-                    <!-- /.col-md-2 -->
+                    
+
+                    <!-- tekst do slika 1 -->
+                    <div class="col-md-2 col-sm-6 col-md-offset-1" style="margin-left: 0px;">
+                        <asp:Table runat="server" CellPadding="20">
+                            <asp:TableRow>
+                                <asp:TableCell> <asp:Label runat="server">Publisher:</asp:Label> </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label1" runat="server">Panini</asp:Label> </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell> <asp:Label ID="Label2" runat="server">Stickers:</asp:Label> </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label3" runat="server">158</asp:Label> </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
+                    </div>
+                    
+                    <!-- prv red, slika 2 -->
+                    <!--
                     <div class="col-md-2 col-sm-6">
                         <div class="gallery-item">
                             <div class="image">
@@ -105,77 +186,32 @@
                                     Nulla sagittis</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
                     </div>
+                    -->
+
+                  
+                    <!-- vtor red, slika 1 -->
                     <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
+                    <div class="col-md-2 col-sm-6 col-md-offset-2" style="margin-left: -43.66666%; margin-top: 19%; width: 26.666667%;">
                         <div class="gallery-item">
                             <div class="image">
                                 <div class="overlay">
-                                    <a href="images/gallery/gallery-item3.jpg" data-rel="lightbox" class="fa fa-expand">
+                                    <a href="images/gallery/uefa-champions-league.jpg" data-rel="lightbox" class="fa fa-expand">
                                     </a>
                                 </div>
-                                <img src="images/gallery/gallery-item3.jpg" alt="image 3">
+                                <asp:Image ID="Image1" runat="server" ImageUrl="images/gallery/uefa-champions-league.jpg"/>
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Quisque lacinia</h3>
+                                    UEFA Champions League 2014/15</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item4.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item4.jpg" alt="image 4">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    Venenatis</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item5.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item5.jpg" alt="image 5">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    Sed sed nisi</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6 col-md-offset-2">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item6.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item6.jpg" alt="image 6">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    Modern</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
+               
+                    </div> 
+
+
+                    <!-- vtor red, slika 2 -->
+                    <!--
                     <div class="col-md-2 col-sm-6">
                         <div class="gallery-item">
                             <div class="image">
@@ -190,43 +226,12 @@
                                     Elegant</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
                     </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item8.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item8.jpg" alt="image 8">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    HTML5 CSS3</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item9.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item9.jpg" alt="image 9">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    New Design</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
-                    <!-- /.col-md-2 -->
+                    -->
+
+                    
+                    <!-- treti red, slika 1 -->
+                    <!-- 
                     <div class="col-md-2 col-sm-6 col-md-offset-3">
                         <div class="gallery-item">
                             <div class="image">
@@ -241,9 +246,12 @@
                                     Download</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
                     </div>
-                    <!-- /.col-md-2 -->
+                    -->
+
+
+                    <!-- treti red, slika 2 -->
+                    <!--
                     <div class="col-md-2 col-sm-6">
                         <div class="gallery-item">
                             <div class="image">
@@ -258,25 +266,10 @@
                                     Responsive</h3>
                             </div>
                         </div>
-                        <!-- /.gallery-item -->
                     </div>
-                    <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6">
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item12.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <img src="images/gallery/gallery-item12.jpg" alt="image 12">
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    Template</h3>
-                            </div>
-                        </div>
-                        <!-- /.gallery-item -->
-                    </div>
+                    -->
+
+
                     <!-- /.col-md-2 -->
                 </div>
                 <!-- /.row -->
@@ -301,6 +294,8 @@
         <br />
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
     </div>
+
+
     <!-- /#menu-container -->
     <div id="templatemo_footer">
         <div class="container">
@@ -317,6 +312,7 @@
     </div>
     <!-- /.templatemo_footer -->
     <!-- Scripts -->
+    
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="js/modernizr.js"></script>
@@ -324,6 +320,7 @@
     <script type="text/javascript" src="js/tabs.js"></script>
     <script type="text/javascript" src="js/jquery.lightbox.js"></script>
     <script type="text/javascript" src="js/templatemo_custom.js"></script>
+    
     </form>
 </body>
 </html>
