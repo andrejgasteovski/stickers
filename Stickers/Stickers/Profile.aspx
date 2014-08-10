@@ -52,7 +52,21 @@
         {
             padding-left: 20px;
         }
-        
+         .tableEdit
+        {
+            margin-left:auto;
+            margin-right:auto;
+            
+          
+        }
+        .rowEdit
+        {
+            margin-bottom:5px;
+        }
+        .btnEdit
+        {
+           
+        }
       
     </style>
 </head>
@@ -136,22 +150,28 @@
                                <Header>
                                     My Collections</Header>
                                 <Content>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue
-                                    massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero,
-                                    sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus
-                                    a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                                    ac turpis e
+                                    
                                 </Content>
                             </asp:AccordionPane>
                             <asp:AccordionPane runat="server" ID="AccordionPane4">
                                 <Header>
-                                    My Collections 2</Header>
+                                    Edit profile</Header>
                                 <Content>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue
-                                    massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero,
-                                    sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus
-                                    a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                                    ac turpis e
+                                    <div style="margin:5px">
+                                    <asp:Table ID="Table1" runat="server" CssClass="tableEdit" >
+                                    <asp:TableRow ><asp:TableCell>Име:</asp:TableCell><asp:TableCell ><asp:TextBox style="margin:5px" ID="imeKorisnik" runat="server"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                    <asp:TableRow><asp:TableCell>Презиме:</asp:TableCell><asp:TableCell><asp:TextBox ID="prezimeKorisnik" runat="server"  style="margin:5px" ></asp:TextBox></asp:TableCell></asp:TableRow>
+                                    <asp:TableRow><asp:TableCell>Дата на раѓање:</asp:TableCell><asp:TableCell><asp:TextBox ID="dataRaganjeKorisnik" runat="server" style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                    <asp:TableRow><asp:TableCell>Држава:</asp:TableCell><asp:TableCell><asp:TextBox ID="drzavaKorisnik" runat="server"  style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                    <asp:TableRow><asp:TableCell>Е-маил:</asp:TableCell><asp:TableCell><asp:TextBox ID="mail" runat="server" style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                    <asp:TableRow><asp:TableCell>Дата на креирање на профилот:</asp:TableCell><asp:TableCell><asp:TextBox ID="dataKreiranjeProfil" runat="server"  style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                                                     
+                                    
+                                  </asp:Table>  
+                                  </div> 
+                                    
+                                 <div style="text-align:center"> <asp:Button  ID="btnEdit" runat="server" Text="Измени податоци" BackColor="#C4063A" BorderColor="#FF5151" ForeColor="White" /> </div>
+
                                 </Content>
                             </asp:AccordionPane>
                             <asp:AccordionPane runat="server" ID="AccordionPane3">
