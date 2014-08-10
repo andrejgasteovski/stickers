@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signUp.aspx.cs" Inherits="Stickers.signUp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signUp.aspx.cs" Inherits="Stickers.signUp" EnableViewState="true" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -83,12 +83,12 @@
                     <table align="center">
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server" AutoPostBack="True"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server" AutoPostBack="True"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
@@ -98,34 +98,38 @@
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server">
+                                <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server" AutoPostBack="True">
                                 </asp:DropDownList>
-                                <asp:DropDownList ID="ddlMonth" runat="server">
+                                <asp:DropDownList ID="ddlMonth" runat="server" AutoPostBack="True">
                                 </asp:DropDownList>
-                                <asp:DropDownList ID="ddlYear" runat="server">
+                                <asp:DropDownList ID="ddlYear" runat="server" AutoPostBack="True">
                                 </asp:DropDownList>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbLocation" placeholder="Location" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbLocation" placeholder="Location" runat="server" AutoPostBack="True"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server" AutoPostBack="True"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbPassword" placeholder="Password" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbPassword" placeholder="Password" runat="server" 
+                                    TextMode="Password" AutoPostBack="True"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:Button CssClass="button" ID="btnSubmit" runat="server" Text="Submit" 
-                                BackColor="#B00B02" ForeColor="White" Font-Bold="True" />
+                                BackColor="#B00B02" ForeColor="White" Font-Bold="True" 
+                                    onclick="btnSubmit_Click"  />
+                             </td>
                         </tr>
+                      
                     </table>
                 </div>
                 <!-- /.col-md-12 -->
