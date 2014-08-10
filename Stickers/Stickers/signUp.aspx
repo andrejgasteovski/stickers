@@ -84,11 +84,17 @@
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                    ControlToValidate="tbFirstName" Display="Dynamic" ErrorMessage="Enter name!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                    ControlToValidate="tbLastName" Display="Dynamic" ErrorMessage="Enter surname!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr class="row">
@@ -98,28 +104,53 @@
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server">
+                                <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server" 
+                                    ValidationGroup="dateGroup">
                                 </asp:DropDownList>
-                                <asp:DropDownList ID="ddlMonth" runat="server" >
+                                <asp:DropDownList ID="ddlMonth" runat="server" ValidationGroup="dateGroup" >
                                 </asp:DropDownList>
-                                <asp:DropDownList ID="ddlYear" runat="server">
+                                <asp:DropDownList ID="ddlYear" runat="server" ValidationGroup="dateGroup">
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                    ControlToValidate="ddlDay" Display="Dynamic" ErrorMessage="Enter date!" 
+                                    ForeColor="Red" ValidationGroup="dateGroup"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbLocation" placeholder="Location" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                    ControlToValidate="tbLocation" Display="Dynamic" ErrorMessage="Enter location!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                    ControlToValidate="tbEmail" Display="Dynamic" ErrorMessage="Enter e-mail!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbPassword" placeholder="Password" runat="server" 
                                     TextMode="Password" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                    ControlToValidate="tbPassword" Display="Dynamic" ErrorMessage="Enter password!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                         <tr class="row">
+                            <td>
+                                <asp:TextBox ID="tbPasswordConfirm" placeholder="Re-enter password" runat="server" 
+                                    TextMode="Password" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                                    ControlToValidate="tbPasswordConfirm" Display="Dynamic" ErrorMessage="Re-enter password!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                                    ControlToCompare="tbPassword" ControlToValidate="tbPasswordConfirm" 
+                                    Display="Dynamic" ErrorMessage="Enter the same password!" ForeColor="Red"></asp:CompareValidator>
                             </td>
                         </tr>
                         <tr class="row">

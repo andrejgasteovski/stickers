@@ -27,13 +27,16 @@ namespace Stickers
                     ddlYear.Items.Add(i.ToString());
                 }
 
-                // tbEmail.Text = "Enter your email:";
-                //tbEmail.OnFocus += OnFocus.EventHandle(RemoveText);
             }
             else {
-                ViewState["firstName"] = tbFirstName.Text;
-                if (ViewState["firstName"] != null)
-                    Response.Write("Vo postback " + ViewState["firstName"].ToString());
+                if (tbFirstName.Text != "" && tbLastName.Text != "" && tbEmail.Text != "" && tbLocation.Text != "" && tbPassword.Text != "")
+                {
+                    ViewState["firstName"] = tbFirstName.Text;
+                    ViewState["lastName"] = tbLastName.Text;
+                    ViewState["email"] = tbEmail.Text;
+                    ViewState["location"] = tbLocation.Text;
+                    ViewState["password"] = tbPassword.Text;
+                }
 
             }
         }
@@ -44,15 +47,7 @@ namespace Stickers
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            ViewState["firstName"] = tbFirstName.Text;
-            if (tbFirstName.Text != "" && tbLastName.Text != "" && tbEmail.Text != "" && tbLocation.Text != "" && tbPassword.Text != "")
-            {
-                ViewState["firstName"] = tbFirstName.Text;
-                ViewState["lastName"] = tbLastName.Text;
-                ViewState["email"] = tbEmail.Text;
-                ViewState["location"] = tbLocation.Text;
-                ViewState["password"] = tbPassword.Text;
-            }
+           
         }
         
         
