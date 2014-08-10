@@ -83,12 +83,12 @@
                     <table align="center">
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server" AutoPostBack="True"></asp:TextBox>
+                                <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server" AutoPostBack="True"></asp:TextBox>
+                                <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server" ></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
@@ -98,28 +98,28 @@
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server" AutoPostBack="True">
+                                <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server">
                                 </asp:DropDownList>
-                                <asp:DropDownList ID="ddlMonth" runat="server" AutoPostBack="True">
+                                <asp:DropDownList ID="ddlMonth" runat="server" >
                                 </asp:DropDownList>
-                                <asp:DropDownList ID="ddlYear" runat="server" AutoPostBack="True">
+                                <asp:DropDownList ID="ddlYear" runat="server">
                                 </asp:DropDownList>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbLocation" placeholder="Location" runat="server" AutoPostBack="True"></asp:TextBox>
+                                <asp:TextBox ID="tbLocation" placeholder="Location" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server" AutoPostBack="True"></asp:TextBox>
+                                <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbPassword" placeholder="Password" runat="server" 
-                                    TextMode="Password" AutoPostBack="True"></asp:TextBox>
+                                    TextMode="Password" ></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">

@@ -34,6 +34,7 @@ namespace Stickers
                 ViewState["firstName"] = tbFirstName.Text;
                 if (ViewState["firstName"] != null)
                     Response.Write("Vo postback " + ViewState["firstName"].ToString());
+
             }
         }
         public void RemoveText(object sender, EventArgs e)
