@@ -31,6 +31,7 @@ namespace Stickers
                 //tbEmail.OnFocus += OnFocus.EventHandle(RemoveText);
             }
             else {
+                ViewState["firstName"] = tbFirstName.Text;
                 if (ViewState["firstName"] != null)
                     Response.Write("Vo postback " + ViewState["firstName"].ToString());
             }
@@ -42,6 +43,7 @@ namespace Stickers
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            ViewState["firstName"] = tbFirstName.Text;
             if (tbFirstName.Text != "" && tbLastName.Text != "" && tbEmail.Text != "" && tbLocation.Text != "" && tbPassword.Text != "")
             {
                 ViewState["firstName"] = tbFirstName.Text;
