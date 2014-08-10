@@ -18,6 +18,7 @@
             border: 1px solid #b10021;
             border-radius:10px;
             font-weight: bold;
+			height:45px;
             padding: 5px 20px;
             position: relative;
             z-index: 20;
@@ -38,10 +39,12 @@
         
         .accordionHeaderSelected
         {
-             background: #b10021 url(images/arrow_down.png) no-repeat 98% center;
+            background: #b10021 url(images/arrow_down.png) no-repeat 98% center;
             border: 1px solid #b10021;
-             border-radius:10px;
-             padding: 5px 20px;
+            border-radius:10px;
+			margin-top:3px;
+            padding: 5px 20px;
+			height:45px;
             position: relative;
             z-index: 20;
             font-weight: bold;
