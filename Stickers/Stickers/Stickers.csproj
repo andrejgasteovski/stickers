@@ -56,6 +56,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="signUp.aspx" />
+    <Content Include="StickersCollection.aspx" />
     <Content Include="Suggestions.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="signUp.aspx.designer.cs">
       <DependentUpon>signUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StickersCollection.aspx.cs">
+      <DependentUpon>StickersCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StickersCollection.aspx.designer.cs">
+      <DependentUpon>StickersCollection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Suggestions.aspx.cs">
       <DependentUpon>Suggestions.aspx</DependentUpon>

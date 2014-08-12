@@ -52,20 +52,19 @@
         {
             padding-left: 20px;
         }
-         .tableEdit
+        .tableEdit
         {
-            margin-left:auto;
-            margin-right:auto;
-            
-          
+            margin-left: auto;
+            margin-right: auto;
         }
         .rowEdit
         {
-            margin-bottom:5px;
+            margin-bottom: 5px;
         }
-        .btnEdit
+        .btnCss
         {
-           
+            width: 100px;
+            margin: 10px;
         }
     </style>
 </head>
@@ -74,7 +73,6 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </asp:ToolkitScriptManager>
     <div class="site-header">
-    
         <table style="float: right; margin: 10px 10px -15px 10px;">
             <!-- vo ovoj div se polinjata za login -->
             <tr>
@@ -143,11 +141,11 @@
         <div class="content homepage" id="menu-1">
             <div class="container-fluid">
                 <div class="row">
-                    <asp:Accordion CssClass="accordion" ID="Accordion1" runat="server" HeaderCssClass="accordionHeader" HeaderSelectedCssClass="accordionHeaderSelected"
-                        ContentCssClass="accordionContent">
+                    <asp:Accordion CssClass="accordion" ID="Accordion1" runat="server" HeaderCssClass="accordionHeader"
+                        HeaderSelectedCssClass="accordionHeaderSelected" ContentCssClass="accordionContent">
                         <Panes>
                             <asp:AccordionPane runat="server" ID="AccordionPane1">
-                               <Header>
+                                <Header>
                                     My Collections</Header>
                                 <Content>
                                     
@@ -157,21 +155,32 @@
                                 <Header>
                                     Edit profile</Header>
                                 <Content>
-                                    <div style="margin:5px">
-                                    <asp:Table ID="Table1" runat="server" CssClass="tableEdit" >
-                                    <asp:TableRow ><asp:TableCell>Име:</asp:TableCell><asp:TableCell ><asp:TextBox style="margin:5px"  ID="imeKorisnik" runat="server"></asp:TextBox></asp:TableCell></asp:TableRow>
-                                    <asp:TableRow><asp:TableCell>Презиме:</asp:TableCell><asp:TableCell><asp:TextBox ID="prezimeKorisnik" runat="server"  style="margin:5px" ></asp:TextBox></asp:TableCell></asp:TableRow>
-                                    <asp:TableRow><asp:TableCell>Дата на раѓање:</asp:TableCell><asp:TableCell><asp:TextBox ID="dataRaganjeKorisnik" runat="server" style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
-                                    <asp:TableRow><asp:TableCell>Држава:</asp:TableCell><asp:TableCell><asp:TextBox ID="drzavaKorisnik" runat="server"  style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
-                                    <asp:TableRow><asp:TableCell>Е-маил:</asp:TableCell><asp:TableCell><asp:TextBox ID="mail" runat="server" style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
-                                    <asp:TableRow><asp:TableCell>Дата на креирање на профилот:</asp:TableCell><asp:TableCell><asp:TextBox ID="dataKreiranjeProfil" runat="server"  style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
-                                                                     
-                                    
-                                  </asp:Table>  
-                                  </div> 
-                                    
-                                 <div style="text-align:center"> <asp:Button  ID="btnEdit" runat="server" Text="Измени податоци" BackColor="#C4063A" BorderColor="#FF5151" ForeColor="White" /> </div>
-
+                                    <div style="margin: 5px">
+                                        <asp:Table ID="Table1" runat="server" CssClass="tableEdit">
+                                            <asp:TableRow>
+                                                <asp:TableCell>Име:</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox Style="margin: 5px" ID="imeKorisnik" runat="server"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                            <asp:TableRow>
+                                                <asp:TableCell>Презиме:</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="prezimeKorisnik" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                            <asp:TableRow>
+                                                <asp:TableCell>Дата на раѓање:</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="dataRaganjeKorisnik" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                            <asp:TableRow>
+                                                <asp:TableCell>Држава:</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="drzavaKorisnik" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                            <asp:TableRow>
+                                                <asp:TableCell>Е-маил:</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="mail" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                            <asp:TableRow>
+                                                <asp:TableCell>Дата на креирање на профилот:</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="dataKreiranjeProfil" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                        </asp:Table>
+                                    </div>
+                                    <div style="text-align: center">
+                                        <asp:Button ID="btnEdit" runat="server" Text="Измени податоци" BackColor="#C4063A"
+                                            BorderColor="#FF5151" ForeColor="White" />
+                                    </div>
                                 </Content>
                             </asp:AccordionPane>
                             <asp:AccordionPane runat="server" ID="AccordionPane3">

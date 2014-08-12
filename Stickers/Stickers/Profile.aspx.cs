@@ -21,10 +21,15 @@ namespace Stickers
             {
                 Response.Redirect("Default.aspx");
             } */
-
-            userID = Convert.ToInt32(Session["userID"].ToString());
-            connection = (SqlConnection)Session["connection"];
-
+            if (Session["userID"] == null)
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                userID = Convert.ToInt32(Session["userID"].ToString());
+                connection = (SqlConnection)Session["connection"];
+            }
             if (!this.IsPostBack)
             {
                 //na krajot, ova da se izbrise
@@ -34,6 +39,8 @@ namespace Stickers
                 //String name = getNameOfUser();
                
                 lblWelcome.Text = "Welcome, " + name;
+
+                
             }
         }
 
@@ -64,5 +71,6 @@ namespace Stickers
             return null;
         }
 
+       
     }
 }
