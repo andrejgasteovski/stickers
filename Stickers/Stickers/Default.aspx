@@ -29,7 +29,7 @@
 	        color: rgb(139, 139, 139);
 	        height: 20px;
 	        width: 100px;
-	        line-height: 0px;
+	        line-height: 15px;
           }
           
           .loginButton
@@ -66,8 +66,8 @@
             <tr>
                 <td>
                     <div>
-                            <asp:TextBox ID="tbUsername" cssclass="loginTextBox" runat="server" Text="e-mail"></asp:TextBox>
-                            <asp:TextBox ID="tbPassword" cssclass="loginTextBox" runat="server" Text="password"></asp:TextBox>
+                            <asp:TextBox id="tbEmail" cssclass="loginTextBox" runat="server" Placeholder="e-mail"></asp:TextBox>
+                            <asp:TextBox id="tbPassword" cssclass="loginTextBox" runat="server" Placeholder="password" TextMode="Password"></asp:TextBox>
                             <asp:Button id="btnLogin" runat="server" Text="Login" CssClass="loginButton" 
                                 onclick="btnLogin_Click"/>
                     </div>

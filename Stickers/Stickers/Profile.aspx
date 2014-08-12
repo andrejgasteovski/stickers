@@ -67,7 +67,6 @@
         {
            
         }
-      
     </style>
 </head>
 <body>
@@ -75,6 +74,7 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </asp:ToolkitScriptManager>
     <div class="site-header">
+    
         <table style="float: right; margin: 10px 10px -15px 10px;">
             <!-- vo ovoj div se polinjata za login -->
             <tr>
@@ -159,7 +159,7 @@
                                 <Content>
                                     <div style="margin:5px">
                                     <asp:Table ID="Table1" runat="server" CssClass="tableEdit" >
-                                    <asp:TableRow ><asp:TableCell>Име:</asp:TableCell><asp:TableCell ><asp:TextBox style="margin:5px" ID="imeKorisnik" runat="server"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                    <asp:TableRow ><asp:TableCell>Име:</asp:TableCell><asp:TableCell ><asp:TextBox style="margin:5px"  ID="imeKorisnik" runat="server"></asp:TextBox></asp:TableCell></asp:TableRow>
                                     <asp:TableRow><asp:TableCell>Презиме:</asp:TableCell><asp:TableCell><asp:TextBox ID="prezimeKorisnik" runat="server"  style="margin:5px" ></asp:TextBox></asp:TableCell></asp:TableRow>
                                     <asp:TableRow><asp:TableCell>Дата на раѓање:</asp:TableCell><asp:TableCell><asp:TextBox ID="dataRaganjeKorisnik" runat="server" style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>
                                     <asp:TableRow><asp:TableCell>Држава:</asp:TableCell><asp:TableCell><asp:TextBox ID="drzavaKorisnik" runat="server"  style="margin:5px"></asp:TextBox></asp:TableCell></asp:TableRow>

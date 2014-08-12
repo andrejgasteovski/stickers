@@ -13,27 +13,58 @@ namespace Stickers
 {
     public partial class Default : System.Web.UI.Page
     {
+        SqlConnection connection;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
+            Session["connection"] = connection;
+
             if (!this.IsPostBack)
             {
-                /*
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
+   
+            }            
+        }
 
-                string sqlString = "select a.name Album, s.name Name, s.number Num from dbo.album a, dbo.sticker s where s.albumID = a.ID";
-                SqlCommand command = new SqlCommand(sqlString, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataSet ds = new DataSet();
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            string email = tbEmail.Text;
+            string password = tbPassword.Text;
+
+            //na krajot, ovoj blok da se izbrise
+            {
+                Session["userID"] = 3;
+                Response.Redirect("Profile.aspx");
+            }
+
+            //na krajot ovoj celiot blok da se odkomentira
+            /*
+            {
+                string sqlQuery = "SELECT id, email, password FROM users";
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
 
                 try
                 {
                     connection.Open();
-                    adapter.Fill(ds, "Stickers");
-                    gvStickers.DataSource = ds;
-                    gvStickers.DataBind();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string tmpEmail = reader["email"].ToString();
+
+                        if (tmpEmail == email)
+                        {
+                            string tmpPassword = reader["password"].ToString();
+                            if (tmpPassword == password)
+                            {
+                                int userID = Convert.ToInt32(reader["id"].ToString());
+                                Session["userID"] = userID;
+                            }
+                        }
+                    }
                 }
-                catch(Exception err)
+                catch (Exception err)
                 {
                     lblMessage.Text = err.Message;
                 }
@@ -41,22 +72,18 @@ namespace Stickers
                 {
                     connection.Close();
                 }
-                */
 
-                //tbUsername.Attributes.Add("onfocus", "if(this.value.toLowerCase() == 'e-mail') this.value = '';");
-                //tbPassword.Attributes.Add("onfocus", "this.value = '';");
-                //tbPassword.Attributes["type"] = "password";   
-                
-            }            
-        }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            string username = tbUsername.Text;
-            string password = tbPassword.Text;
-
-            Session["username"] = username;
-            Response.Redirect("Profile.aspx");
+                if (Session["userID"] != null)
+                {
+                    Response.Redirect("Profile.aspx");
+                }
+                else
+                {
+                    lblMessage.Text = "Incorrect username or password";
+                }
+            }
+            */
+             
         }
     }
 }
