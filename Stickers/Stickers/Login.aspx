@@ -92,7 +92,12 @@
                             <td>
                                 Password</td>
                             <td>
-                                <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td>
+                                <asp:Button ID="btnLogin" runat="server" Text="Login" onclick="btnLogin_Click"></asp:Button>
                             </td>
                         </tr>
                     </table>
