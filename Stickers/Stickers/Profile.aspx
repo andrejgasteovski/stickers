@@ -158,40 +158,67 @@
                                     <div style="margin: 5px">
                                         <asp:Table ID="Table1" runat="server" CssClass="tableEdit">
                                             <asp:TableRow>
-                                                <asp:TableCell>Име:</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox Style="margin: 5px" ID="imeKorisnik" runat="server"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                                <asp:TableCell>First name</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox Style="margin: 5px" ID="tbFirstName" runat="server"></asp:TextBox></asp:TableCell>
+                                            </asp:TableRow>
                                             <asp:TableRow>
-                                                <asp:TableCell>Презиме:</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="prezimeKorisnik" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                                <asp:TableCell>Last name</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="tbLastName" runat="server" Style="margin: 5px"></asp:TextBox>
+                                                </asp:TableCell>
+                                            </asp:TableRow>
                                             <asp:TableRow>
-                                                <asp:TableCell>Дата на раѓање:</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="dataRaganjeKorisnik" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                                <asp:TableCell>Date of birth</asp:TableCell><asp:TableCell>
+                                                    <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server"/>
+                                                    <asp:DropDownList ID="ddlMonth" runat="server"/>
+                                                    <asp:DropDownList ID="ddlYear" runat="server"/>
+                                                </asp:TableCell>
+                                            </asp:TableRow>
                                             <asp:TableRow>
-                                                <asp:TableCell>Држава:</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="drzavaKorisnik" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                                <asp:TableCell>Location</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="tbLocation" runat="server" Style="margin: 5px"></asp:TextBox>
+                                                </asp:TableCell>
+                                            </asp:TableRow>
                                             <asp:TableRow>
-                                                <asp:TableCell>Е-маил:</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="mail" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
-                                            <asp:TableRow>
-                                                <asp:TableCell>Дата на креирање на профилот:</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="dataKreiranjeProfil" runat="server" Style="margin: 5px"></asp:TextBox></asp:TableCell></asp:TableRow>
+                                                <asp:TableCell>E-mail</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="tbEmail" runat="server" Style="margin: 5px"></asp:TextBox>
+                                                </asp:TableCell>
+                                            </asp:TableRow>
+                                 
                                         </asp:Table>
                                     </div>
                                     <div style="text-align: center">
-                                        <asp:Button ID="btnEdit" runat="server" Text="Измени податоци" BackColor="#C4063A"
-                                            BorderColor="#FF5151" ForeColor="White" />
+                                        <asp:Button ID="btnSubmitEditProfile" runat="server" Text="Submit" BackColor="#C4063A"
+                                            BorderColor="#FF5151" ForeColor="White" onclick="btnSubmitEditProfile_Click"/>
                                     </div>
                                 </Content>
                             </asp:AccordionPane>
                             <asp:AccordionPane runat="server" ID="AccordionPane3">
                                 <Header>
-                                    My Collections 3</Header>
+                                   Change Password
+                                </Header>
                                 <Content>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue
-                                    massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero,
-                                    sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus
-                                    a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                                    ac turpis e
+                                    <div style="margin: 5px">
+                                        <asp:Table ID="Table2" runat="server" CssClass="tableEdit">
+                                            <asp:TableRow>
+                                                <asp:TableCell>Old Password</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox Style="margin: 5px" ID="tbOldPassword" runat="server" TextMode="Password"></asp:TextBox></asp:TableCell>
+                                            </asp:TableRow>
+                                            <asp:TableRow>
+                                                <asp:TableCell>New password</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="tbNewPassword" runat="server" Style="margin: 5px" TextMode="Password"></asp:TextBox>
+                                                </asp:TableCell>
+                                            </asp:TableRow>
+                                            <asp:TableRow>
+                                                <asp:TableCell>Confirm new password</asp:TableCell><asp:TableCell>
+                                                    <asp:TextBox ID="tbConfrimNewPassword" runat="server" Style="margin: 5px" TextMode="Password"></asp:TextBox>
+                                                </asp:TableCell>
+                                            </asp:TableRow>                                 
+                                        </asp:Table>
+                                    </div>
+                                    <div style="text-align: center">
+                                        <asp:Button ID="btnSubmitChangePassword" runat="server" Text="Submit" BackColor="#C4063A"
+                                            BorderColor="#FF5151" ForeColor="White" onclick="btnSubmitChangePassword_Click"/>
+                                    </div>
                                 </Content>
                             </asp:AccordionPane>
                         </Panes>
