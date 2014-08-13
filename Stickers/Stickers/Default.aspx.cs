@@ -34,7 +34,7 @@ namespace Stickers
 
             //na krajot, ovoj blok da se izbrise
             {
-                Session["userID"] = 3;
+                Session["userID"] = 9;
                 Response.Redirect("Profile.aspx");
             }
 
