@@ -30,6 +30,11 @@
              font-weight: bold;
              margin:10px;
         }
+        
+        .sticker
+        {
+            height: 25px; width: 25px; background-color:Red; margin: 5px; float: left;
+            }
     </style>
 </head>
 
@@ -85,8 +90,16 @@
                                                 </asp:Panel>
                                             </LayoutTemplate>
                                             <ItemTemplate>
-                                                            <asp:Button runat="server" ID="btn01" Text='<%# Eval("Name") %>' CssClass="btnCss" />
-                                                      
+                                                            <!--
+                                                            <asp:Button runat="server" ID="btn01" Text='<%# Eval("number") %>' CssClass="btnCss" />
+                                                            
+                                                            <div id="myDiv" style="height: 25px; width: 25px; background-color:Red; margin: 5px; float: left;" onclick="myFunction">
+                                                                <asp:Label Text='<%# Eval("number") %>' runat="server"></asp:Label>
+                                                            </div>
+                                                            -->
+                                                <asp:Panel ID="myPanel" runat="server" CssClass="sticker" onclick="alert('hello');">
+                                                    <asp:Label ID="Label1" Text='<%# Eval("number") %>' runat="server" ></asp:Label>
+                                                </asp:Panel>
                                             </ItemTemplate>
                                             <EmptyDataTemplate>
                                                 No data
@@ -115,6 +128,7 @@
             <div class="row">
                
                 <!-- /.col-md-12 -->
+                <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </div>
             <!-- /.row -->
         </div>

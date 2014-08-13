@@ -4,21 +4,79 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace Stickers
 {
     public partial class StickersCollection : System.Web.UI.Page
     {
+        public static readonly string SELECT_COLLECTED_STICKERS = "select s.ID, sc.duplicates, s.name, s.number, s.albumID from stickerCollections sc, stickers s where sc.userID = @userID and s.albumID = @albumID and sc.stickerID = s.ID";
+
+        int userID;
+        int albumID;
+        SqlConnection connection;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userID"] == null || Session["albumID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                userID = Convert.ToInt32(Session["userID"].ToString());
+                albumID = Convert.ToInt32(Session["albumID"].ToString());
+                
+                connection = (SqlConnection)Session["connection"];
+            }
+
             if (!IsPostBack) {
                 BindListView();
+
             }
         }
+
+        private List<Sticker> getStickers()
+        {
+            List<Sticker> stickers = new List<Sticker>();
+
+            SqlCommand command = new SqlCommand(SELECT_COLLECTED_STICKERS, connection);
+            command.Parameters.AddWithValue("userID", userID);
+            command.Parameters.AddWithValue("albumID", albumID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Sticker sticker = new Sticker();
+                    sticker.ID = Convert.ToInt32(dr["ID"].ToString());
+                    sticker.albumID = Convert.ToInt32(dr["albumID"].ToString());
+                    sticker.name = dr["name"].ToString();
+                    sticker.number = Convert.ToInt32(dr["number"].ToString());
+                    sticker.duplicates = Convert.ToInt32(dr["duplicates"].ToString());
+
+                    stickers.Add(sticker);
+                 }
+            }
+            catch (Exception err)
+            {
+                lblMessage.Text = err.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return stickers;
+        }
+
         public class Button
         {
             public string Name { get; set; }
         }
+
         List<Button> SampleData()
         {
             List<Button> p = new List<Button>();
@@ -39,8 +97,9 @@ namespace Stickers
         }
         void BindListView()
         {
-            lvMyCollections.DataSource = SampleData();
+            lvMyCollections.DataSource = getStickers();
             lvMyCollections.DataBind();
+            
         }
         protected void lvMyCollections_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
@@ -49,6 +108,11 @@ namespace Stickers
 
             //rebind List View
             BindListView();
+        }
+
+        protected void myFunction(object sender, EventArgs e)
+        {
+            
         }
     }
 }

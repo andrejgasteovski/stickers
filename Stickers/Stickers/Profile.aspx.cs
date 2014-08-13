@@ -13,6 +13,8 @@ namespace Stickers
         public static readonly string SELECT_USER_DATA = "SELECT * FROM users WHERE id = @userID";
         public static readonly string UPDATE_USER_DATA = "update users set email = @email, firstName = @firstName, lastName = @lastName, location = @location, dateOfBirth = @dateOfBirth where ID = @userID";
         public static readonly string UPDATE_USER_PASSWORD = "update users set password = @password where ID = @userID";
+        public static readonly string SELECT_ALBUMS_COLLECTED = "select * from albums where ID in (select albumID from albumCollections where userID = @userID)";
+
 
         SqlConnection connection;
         int userID;
@@ -23,7 +25,6 @@ namespace Stickers
         string userDateOfBirth;
         string userEmail;
         string userPassword;
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,14 +48,15 @@ namespace Stickers
                 }
 
                 //na krajot, ovoj blok da se odkomentira
-                /*
+                
                 {
                     initializeDateDropDownLists();
                     initializeUserData();
                     initializeWelcomeText();
                     initializeEditProfileAccordionPane();
+                    initializeMyCollectionsPane();
                 }
-               */
+               
             }
         }
 
@@ -182,5 +184,45 @@ namespace Stickers
                 lblMessage.Text = "Old password is incorrect or passwords don't match";
             }
         }
+
+        private void initializeMyCollectionsPane()
+        {
+            SqlCommand command = new SqlCommand(SELECT_ALBUMS_COLLECTED, connection);
+            command.Parameters.AddWithValue("userID", userID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader dr = command.ExecuteReader();
+                while (dr.Read())
+                {
+                    ListItem item = new ListItem();
+                    item.Text = dr["name"].ToString();
+                    item.Value = dr["id"].ToString();
+                    lbCollections.Items.Add(item);
+                }
+            }
+            catch (Exception err)
+            {
+                lblMessage.Text = err.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        protected void lbCollections_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEditAlbum_Click(object sender, EventArgs e)
+        {
+            Session["albumID"] = lbCollections.SelectedValue;
+            Response.Redirect("StickersCollection.aspx");
+        }
+
+
     }
 }

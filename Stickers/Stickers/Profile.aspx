@@ -148,7 +148,8 @@
                                 <Header>
                                     My Collections</Header>
                                 <Content>
-                                    
+                                    <asp:ListBox ID="lbCollections" runat="server"></asp:ListBox>
+                                    <asp:Button ID="btnEditAlbum" runat="server" Text="Edit Album" OnClick="btnEditAlbum_Click"/>
                                 </Content>
                             </asp:AccordionPane>
                             <asp:AccordionPane runat="server" ID="AccordionPane4">

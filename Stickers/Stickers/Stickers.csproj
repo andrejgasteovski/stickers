@@ -70,6 +70,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Album.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -104,6 +105,7 @@
     <Compile Include="signUp.aspx.designer.cs">
       <DependentUpon>signUp.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Sticker.cs" />
     <Compile Include="StickersCollection.aspx.cs">
       <DependentUpon>StickersCollection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
