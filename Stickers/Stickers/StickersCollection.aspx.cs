@@ -15,26 +15,26 @@ namespace Stickers
                 BindListView();
             }
         }
-        public class Sticker
+        public class Button
         {
             public string Name { get; set; }
         }
-        List<Sticker> SampleData()
+        List<Button> SampleData()
         {
-            List<Sticker> p = new List<Sticker>();
-            p.Add(new Sticker() { Name = "Button00" });
-            p.Add(new Sticker() { Name = "Button01" });
-            p.Add(new Sticker() { Name = "Button02" });
-            p.Add(new Sticker() { Name = "Button03" });
-            p.Add(new Sticker() { Name = "Button04" });
-            p.Add(new Sticker() { Name = "Button05" });
-            p.Add(new Sticker() { Name = "Button06" });
-            p.Add(new Sticker() { Name = "Button07" });
-            p.Add(new Sticker() { Name = "Button08" });
-            p.Add(new Sticker() { Name = "Button09" });
-            p.Add(new Sticker() { Name = "Button10" });
-            p.Add(new Sticker() { Name = "Button11" });
-            p.Add(new Sticker() { Name = "Button12" });
+            List<Button> p = new List<Button>();
+            p.Add(new Button() { Name = "Button00" });
+            p.Add(new Button() { Name = "Button01" });
+            p.Add(new Button() { Name = "Button02" });
+            p.Add(new Button() { Name = "Button03" });
+            p.Add(new Button() { Name = "Button04" });
+            p.Add(new Button() { Name = "Button05" });
+            p.Add(new Button() { Name = "Button06" });
+            p.Add(new Button() { Name = "Button07" });
+            p.Add(new Button() { Name = "Button08" });
+            p.Add(new Button() { Name = "Button09" });
+            p.Add(new Button() { Name = "Button10" });
+            p.Add(new Button() { Name = "Button11" });
+            p.Add(new Button() { Name = "Button12" });
             return p;
         }
         void BindListView()

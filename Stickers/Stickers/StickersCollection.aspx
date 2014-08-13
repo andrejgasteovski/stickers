@@ -85,7 +85,7 @@
                                                 </asp:Panel>
                                             </LayoutTemplate>
                                             <ItemTemplate>
-                                                            <asp:Button runat="server" ID="btn01" Text='<%# Eval("Name") %>' OnClientClick="return false" CssClass="btnCss" ForeColor="White" />
+                                                            <asp:Button runat="server" ID="btn01" Text='<%# Eval("Name") %>' CssClass="btnCss" />
                                                       
                                             </ItemTemplate>
                                             <EmptyDataTemplate>
