@@ -5,13 +5,27 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Stickers
 {
     public partial class signUp : System.Web.UI.Page
     {
+        SqlConnection connection;
+        public static readonly string INSERT_USER = "insert into users(email, password, firstName, lastName, location, dateOfBirth, dateOfCreatingAccount) values(@email, @password, @firstName, @lastName, @location, @dateOfBirth, (select current_timestamp))";
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            connection = (SqlConnection)Session["connection"];
+            
+            //na krajot, ovoj if da se odkomentira
+            /*
+            if (connection == null)
+            {
+                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString);
+            } */
+            
             if (!IsPostBack)
             {
                 for (int i = 1; i < 32; i++)
@@ -26,7 +40,6 @@ namespace Stickers
                 {
                     ddlYear.Items.Add(i.ToString());
                 }
-
             }
             else {
                 if (tbFirstName.Text != "" && tbLastName.Text != "" && tbEmail.Text != "" && tbLocation.Text != "" && tbPassword.Text != "")
@@ -47,9 +60,35 @@ namespace Stickers
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-           
+            int dayOfBirth = Convert.ToInt32(ddlDay.SelectedItem.ToString());
+            int monthOfBirth = Convert.ToInt32(ddlMonth.SelectedItem.ToString());
+            int yearOfBirth = Convert.ToInt32(ddlYear.SelectedItem.ToString());
+            string dateOfBirth = String.Format("{0}-{1}-{2}", yearOfBirth, monthOfBirth, dayOfBirth);
+
+            SqlCommand command = new SqlCommand(INSERT_USER, connection);
+
+            command.Parameters.AddWithValue("email", tbEmail.Text);
+            command.Parameters.AddWithValue("firstName", tbFirstName.Text);
+            command.Parameters.AddWithValue("lastName", tbLastName.Text);
+            command.Parameters.AddWithValue("location", tbLocation.Text);
+            command.Parameters.AddWithValue("password", tbPassword.Text);
+            command.Parameters.AddWithValue("dateOfBirth", dateOfBirth);
+
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                lblMessage.Text = err.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            Response.Redirect("Login.aspx");
         }
-        
-        
     }
 }

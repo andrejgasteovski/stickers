@@ -19,7 +19,7 @@ namespace Stickers
             /*
             if (Session["userID"] == null)
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Login.aspx");
             } */
             if (Session["userID"] == null)
             {
