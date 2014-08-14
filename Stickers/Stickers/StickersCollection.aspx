@@ -128,7 +128,7 @@
                                                 </asp:Panel>
                                             </LayoutTemplate>
                                             <ItemTemplate> 
-                                                <asp:Button runat="server" ID="btn01" Text='<%# Eval("number") %>' CssClass="btnCss"/>
+                                                <asp:Button runat="server" ID="btnSticker" Text='<%# Eval("number") %>' CssClass='<%# Eval("cssClass") %>' OnClick="stickerButton_Click"/>
                                             </ItemTemplate>
                                             <EmptyDataTemplate>
                                                 No data
@@ -136,7 +136,7 @@
                                             <ItemSeparatorTemplate></ItemSeparatorTemplate>
                                         </asp:ListView>
                                         <asp:DataPager ID="lvDataPager1" runat="server" PagedControlID="lvMyCollections"
-                                            PageSize="10">
+                                            PageSize="70">
                                             <Fields>
                                                 <asp:NextPreviousPagerField ShowFirstPageButton="True" ShowNextPageButton="False" />
                                                 <asp:NumericPagerField />
@@ -158,6 +158,14 @@
                
                 <!-- /.col-md-12 -->
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                <asp:Button ID="btnCollect" runat="server" Text="Collect them" 
+                    onclick="btnCollect_Click" />
+&nbsp;<asp:Button ID="btnLose" runat="server" Text="Lost them" onclick="btnLose_Click" />
+&nbsp;<asp:ListBox ID="lbSelected" runat="server" DataTextField="name"></asp:ListBox>
+                <div class="row">
+               
+                <!-- /.col-md-12 -->
+            </div>
             </div>
             <!-- /.row -->
         </div>

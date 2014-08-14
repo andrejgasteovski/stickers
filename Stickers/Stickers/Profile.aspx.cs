@@ -222,7 +222,5 @@ namespace Stickers
             Session["albumID"] = lbCollections.SelectedValue;
             Response.Redirect("StickersCollection.aspx");
         }
-
-
     }
 }

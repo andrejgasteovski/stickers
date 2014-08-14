@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Stickers
 {
+    [Serializable]
     public class Sticker
     {
         public static readonly string CSS_CLASS_STICKER_MISSING = "stickerMissing";
