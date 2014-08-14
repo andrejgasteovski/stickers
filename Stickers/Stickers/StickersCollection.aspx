@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StickersCollection.aspx.cs" Inherits="Stickers.StickersCollection" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,7 +23,7 @@
     <link rel="stylesheet" href="css/templatemo_style.css" />
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
-    <!-- ovde go pisuvam nasiot css -->
+    <!-- ovde go pisuvam nasiot css -->    
     <style type="text/css">
         .btnCss
         {
@@ -30,11 +32,47 @@
              font-weight: bold;
              margin:10px;
         }
-        
+    
         .sticker
         {
             height: 25px; width: 25px; background-color:Red; margin: 5px; float: left;
-            }
+        }
+        
+        /* css za slikicka koja e selektirana */
+        .stickerChecked
+        {
+            border-radius:5px;  
+            background : red;
+            font-weight: bold;
+            margin:10px;
+        }
+        
+        /* css za slikicka koja korisnikot ne ja poseduva */
+        .stickerMissing
+        {
+            border-radius:5px;  
+            background : green;
+            font-weight: bold;
+            margin:10px;
+        }
+        
+        /* css za slikicka koja korisnikot ja ima 2 ili poveke pati */
+        .stickerDuplicate
+        {
+            border-radius:5px;  
+            background : blue;
+            font-weight: bold;
+            margin:10px;
+        }
+        
+        /* css za slikicka koja korisnikot ja ima ednas */
+        .stickerCollected
+        {
+            border-radius:5px;  
+            background : yellow;
+            font-weight: bold;
+            margin:10px;
+        }
     </style>
 </head>
 
@@ -89,17 +127,8 @@
                                                     <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
                                                 </asp:Panel>
                                             </LayoutTemplate>
-                                            <ItemTemplate>
-                                                            <!--
-                                                            <asp:Button runat="server" ID="btn01" Text='<%# Eval("number") %>' CssClass="btnCss" />
-                                                            
-                                                            <div id="myDiv" style="height: 25px; width: 25px; background-color:Red; margin: 5px; float: left;" onclick="myFunction">
-                                                                <asp:Label Text='<%# Eval("number") %>' runat="server"></asp:Label>
-                                                            </div>
-                                                            -->
-                                                <asp:Panel ID="myPanel" runat="server" CssClass="sticker" onclick="alert('hello');">
-                                                    <asp:Label ID="Label1" Text='<%# Eval("number") %>' runat="server" ></asp:Label>
-                                                </asp:Panel>
+                                            <ItemTemplate> 
+                                                <asp:Button runat="server" ID="btn01" Text='<%# Eval("number") %>' CssClass="btnCss"/>
                                             </ItemTemplate>
                                             <EmptyDataTemplate>
                                                 No data
