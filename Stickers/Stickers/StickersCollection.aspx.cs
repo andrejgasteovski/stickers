@@ -15,6 +15,9 @@ namespace Stickers
         public static readonly string SELECT_ALL_STICKERS = "select * from stickers where albumID = @albumID";
         public static readonly string UPDATE_STICKER_DUPLICATES = "update stickerCollections set duplicates = @duplicates where stickerID = @stickerID and userID = @userID";
         public static readonly string INSERT_STICKER_COLLECTION = "insert into stickerCollections(userID, stickerID, dateOfAcquirement, duplicates) values(@userID, @stickerID, (select CURRENT_TIMESTAMP), @duplicates)";
+        //public static readonly string SELECT_USERS_WITH_DUPLICATES = "select * from users where ID in(select distinct userID from stickerCollections where duplicates > 1 and stickerID in (@stickersIDs))";
+        public static readonly string SELECT_USERS_MISSING_STICKERS = "select * from users where ID not in(select userID from stickerCollections where stickerID in (@stickersIDs))";
+
 
         int userID;
         int albumID;
@@ -25,34 +28,43 @@ namespace Stickers
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userID"] == null || Session["albumID"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            else
-            {
-                userID = Convert.ToInt32(Session["userID"].ToString());
-                albumID = Convert.ToInt32(Session["albumID"].ToString());
-                
-                connection = (SqlConnection)Session["connection"];
-            }
 
-            if (!IsPostBack)
+            //koga se raboti so baza, ovoj blok da se odkomentira
+            /*
             {
-                BindListView();
-                selectedStickers = new List<Sticker>();
-                lbSelected.DataSource = selectedStickers;
-            }
-            else 
-            {
-                List<Sticker> selectedStickers = new List<Sticker>();
-                if (ViewState["selectedStickers"] != null)
+                if (Session["userID"] == null || Session["albumID"] == null)
                 {
-                    selectedStickers = (List<Sticker>)ViewState["selectedStickers"];
+                    Response.Redirect("Login.aspx");
                 }
-                lbSelected.DataSource = selectedStickers;
-                lbSelected.DataBind();
+                else
+                {
+                    userID = Convert.ToInt32(Session["userID"].ToString());
+                    albumID = Convert.ToInt32(Session["albumID"].ToString());
+
+                    connection = (SqlConnection)Session["connection"];
+                }
+            
+
+                if (!IsPostBack)
+                {
+                    BindListView();
+                    selectedStickers = new List<Sticker>();
+                    lbSelected.DataSource = selectedStickers;   
+                }
+                else
+                {
+                    List<Sticker> selectedStickers = new List<Sticker>();
+                    if (ViewState["selectedStickers"] != null)
+                    {
+                        selectedStickers = (List<Sticker>)ViewState["selectedStickers"];
+                    }
+                    lbSelected.DataSource = selectedStickers;
+                    lbSelected.DataBind();
+                }
             }
+            */
+
+
         }
 
         //fetch all the stickers that user has collected, including duplicates
@@ -111,7 +123,8 @@ namespace Stickers
                     int duplicates = 0;
 
                     Sticker sticker = new Sticker(ID, name, number, albumID, duplicates);
-                    stickers.Add(sticker.number, sticker);
+                    if(!stickers.ContainsKey(sticker.number))
+                        stickers.Add(sticker.number, sticker);
                 }
             }
             catch (Exception err)
@@ -126,34 +139,6 @@ namespace Stickers
             ViewState["allStickers"] = stickers;
             return stickers;
         }
-
-        
-        /*
-        public class Button
-        {
-            public string Name { get; set; }
-        }
-
-        List<Button> SampleData()
-        {
-            List<Button> p = new List<Button>();
-            p.Add(new Button() { Name = "Button00" });
-            p.Add(new Button() { Name = "Button01" });
-            p.Add(new Button() { Name = "Button02" });
-            p.Add(new Button() { Name = "Button03" });
-            p.Add(new Button() { Name = "Button04" });
-            p.Add(new Button() { Name = "Button05" });
-            p.Add(new Button() { Name = "Button06" });
-            p.Add(new Button() { Name = "Button07" });
-            p.Add(new Button() { Name = "Button08" });
-            p.Add(new Button() { Name = "Button09" });
-            p.Add(new Button() { Name = "Button10" });
-            p.Add(new Button() { Name = "Button11" });
-            p.Add(new Button() { Name = "Button12" });
-            return p;
-        }
-         * 
-         */
 
         void BindListView()
         {
@@ -173,6 +158,7 @@ namespace Stickers
             lvMyCollections.DataSource = stickersAll.Values;
             lvMyCollections.DataBind();     
         }
+
         protected void lvMyCollections_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
             //set current page startindex, max rows and rebind to false
@@ -182,30 +168,95 @@ namespace Stickers
             BindListView();
         }
 
+
+
+        //nadolu se eventi za kopceto stickerButton 
+
+
         protected void stickerButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             int stickerNumber = Convert.ToInt32(button.Text);
 
             List<Sticker> selectedStickers;
-            Dictionary<int, Sticker> allStickers;
-            
             if (ViewState["selectedStickers"] == null)
                 selectedStickers = new List<Sticker>();
             else
                 selectedStickers = (List<Sticker>)ViewState["selectedStickers"];
 
-            allStickers = (Dictionary<int, Sticker>)ViewState["allStickers"];
-
+            Dictionary<int, Sticker> allStickers = (Dictionary<int, Sticker>)ViewState["allStickers"];
             selectedStickers.Add(allStickers[stickerNumber]);
+
             ViewState["selectedStickers"] = selectedStickers;
 
             lbSelected.DataSource = selectedStickers;
             lbSelected.DataBind();
 
+            updateListUsersWithDuplicates(selectedStickers);   
+            //tuka da se povika metod za updateListUsersMisssingStickers (treba da se implementira)
+
+
             button.CssClass = Sticker.CSS_CLASS_STICKER_CHECKED;
         }
 
+        private void updateListSelectedStickers()
+        {
+            ViewState["selectedStickers"] = selectedStickers;
+
+            lbSelected.DataSource = selectedStickers;
+            lbSelected.DataBind();
+        }
+
+        private void updateListUsersWithDuplicates(List<Sticker> selectedStickers)
+        {
+            List<User> users = new List<User>();
+
+            string selectedStickersString = "";
+            foreach(Sticker s in selectedStickers)
+            {
+                selectedStickersString += s.ID + ", ";
+            }
+            selectedStickersString = selectedStickersString.Substring(0, selectedStickersString.Length - 2);
+            
+            //ovoj sql treba da se smeni
+            string SELECT_USERS_WITH_DUPLICATES = SELECT_USERS_WITH_DUPLICATES = "select * from users where ID in(select distinct userID from stickerCollections where duplicates > 1 and stickerID in (" + selectedStickersString + "))";
+            
+            SqlCommand command = new SqlCommand(SELECT_USERS_WITH_DUPLICATES, connection);
+            command.Parameters.AddWithValue("stickersIDs", selectedStickersString);
+            
+            try
+            {
+                connection.Open();
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    User user = new User();
+                    user.ID = Convert.ToInt32(dr["ID"].ToString());
+                    user.firstName = dr["firstName"].ToString();
+                    user.lastName = dr["lastName"].ToString();
+                    user.location = dr["location"].ToString();
+                    user.password = dr["password"].ToString();
+                    users.Add(user);
+                }
+            }
+            catch (Exception err)
+            {
+                lblMessage.Text = err.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lbUsersDuplicates.DataSource = users;
+            lbUsersDuplicates.DataBind();
+        }
+
+
+        //nadolu se eventi za kopcinjata collect i lost stickers
+
+        
         protected void btnCollect_Click(object sender, EventArgs e)
         {
             List<Sticker> selectedStickers = (List<Sticker>)ViewState["selectedStickers"];
@@ -269,8 +320,5 @@ namespace Stickers
                 connection.Close();
             }
         }
-
-
-
     }
 }

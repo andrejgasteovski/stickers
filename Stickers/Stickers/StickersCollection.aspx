@@ -162,6 +162,8 @@
                     onclick="btnCollect_Click" />
 &nbsp;<asp:Button ID="btnLose" runat="server" Text="Lost them" onclick="btnLose_Click" />
 &nbsp;<asp:ListBox ID="lbSelected" runat="server" DataTextField="name"></asp:ListBox>
+                <asp:ListBox ID="lbUsersDuplicates" runat="server"></asp:ListBox>
+                <asp:ListBox ID="lbUsersMissing" runat="server"></asp:ListBox>
                 <div class="row">
                
                 <!-- /.col-md-12 -->

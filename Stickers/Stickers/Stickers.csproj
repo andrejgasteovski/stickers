@@ -120,6 +120,7 @@
     <Compile Include="Suggestions.aspx.designer.cs">
       <DependentUpon>Suggestions.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
