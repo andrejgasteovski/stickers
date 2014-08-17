@@ -32,17 +32,53 @@
              font-weight: bold;
              margin:10px;
         }
-    
+     .btnCss:hover
+        {
+             border:3px solid #EED5D2 !important; 
+             width:12%; 
+        }
+         .sticker:hover
+        {
+            border:3px solid #EED5D2 !important; 
+             width:12%;
+                
+        }
+        .stickerChecked:hover
+        {
+            border:3px solid #EED5D2 !important; 
+            width:12%;                
+        }
+        .stickerMissing:hover
+        {
+             border:3px solid #EED5D2 !important; 
+             width:12%; 
+        }
+        .stickerDuplicate:hover
+        {
+             border:3px solid #EED5D2 !important;
+             width:12%; 
+        }
+        .stickerCollected:hover
+        {
+             border:3px solid #EED5D2 !important; 
+              width:12%;
+        }
         .sticker
         {
             height: 25px; width: 25px; background-color:Red; margin: 5px; float: left;
         }
-        
         /* css za slikicka koja e selektirana */
         .stickerChecked
         {
-            border-radius:5px;  
-            background : red;
+            border-radius:5px; 
+            background : #EED5D2;
+            background-image: url('img/check.png');
+            background-size:70%;
+            color:White;
+            background-repeat: no-repeat;
+            background-position: center;
+            width:8%; 
+            /*background : red;*/
             font-weight: bold;
             margin:10px;
         }
@@ -51,7 +87,9 @@
         .stickerMissing
         {
             border-radius:5px;  
-            background : green;
+            width:8%;
+            color:White;            
+            background :  #b10021;
             font-weight: bold;
             margin:10px;
         }
@@ -59,8 +97,11 @@
         /* css za slikicka koja korisnikot ja ima 2 ili poveke pati */
         .stickerDuplicate
         {
-            border-radius:5px;  
-            background : blue;
+            border-radius:5px;
+            width:8%; 
+            /*height:3%;*/
+            color:White;            
+            background : #00675F;
             font-weight: bold;
             margin:10px;
         }
@@ -69,10 +110,55 @@
         .stickerCollected
         {
             border-radius:5px;  
-            background : yellow;
+            width:8%;
+            color:White;            
+            background :  #03A89E;
             font-weight: bold;
             margin:10px;
         }
+        #btnLose
+        {
+            text-align:center;
+            color:White;            
+            background :  #b10021;
+            font-weight: bold;
+            width:30%;
+            border-radius:5px;
+            
+        }
+        #btnCollect
+        {
+            margin-left: 24%;
+            color:White;            
+            background :  #b10021;
+            font-weight: bold;
+            width:30%;
+            border-radius:5px;
+            
+        }
+        #center
+        {
+            margin-left: auto;
+            margin-right: auto;
+            width: 35%;
+            
+        }
+        #lbSelected
+        {
+            width: 60%;
+            margin-left: 25%;
+            border: 3px dotted  #b10021;
+            border-radius:5px;
+            text-align:center;
+            color:Black;
+        }
+        #title
+        {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        
     </style>
 </head>
 
@@ -114,7 +200,7 @@
                 <div class="col-md-12 text-center">
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
-                        <h1>Suggestions</h1>
+                        <h1 id="title">Sticker Collections</h1><br />
                     </a>
                     <!-- /.logo -->
                 </div>
@@ -158,12 +244,16 @@
                
                 <!-- /.col-md-12 -->
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                <div id="center">
+                <asp:ListBox ID="lbSelected" runat="server" DataTextField="name"></asp:ListBox><br /><br />
                 <asp:Button ID="btnCollect" runat="server" Text="Collect them" 
                     onclick="btnCollect_Click" />
-&nbsp;<asp:Button ID="btnLose" runat="server" Text="Lost them" onclick="btnLose_Click" />
-&nbsp;<asp:ListBox ID="lbSelected" runat="server" DataTextField="name"></asp:ListBox>
+&nbsp;<asp:Button ID="btnLose" runat="server" Text="Lost them" onclick="btnLose_Click" />   
+<!--
+&nbsp;<asp:ListBox ID="lbSelected1" runat="server" DataTextField="name"></asp:ListBox>
                 <asp:ListBox ID="lbUsersDuplicates" runat="server"></asp:ListBox>
                 <asp:ListBox ID="lbUsersMissing" runat="server"></asp:ListBox>
+-->     
                 <div class="row">
                
                 <!-- /.col-md-12 -->
