@@ -31,6 +31,7 @@
              background : -webkit-gradient(linear, left top, left bottom, from(#fff), to(#B00B02));
              font-weight: bold;
              margin:10px;
+             text-align: center !important;
         }
      .btnCss:hover
         {

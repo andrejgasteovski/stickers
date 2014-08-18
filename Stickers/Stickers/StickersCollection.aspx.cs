@@ -30,7 +30,7 @@ namespace Stickers
         {
 
             //koga se raboti so baza, ovoj blok da se odkomentira
-            /*
+            
             {
                 if (Session["userID"] == null || Session["albumID"] == null)
                 {
@@ -62,7 +62,7 @@ namespace Stickers
                     lbSelected.DataBind();
                 }
             }
-            */
+            
 
 
         }
