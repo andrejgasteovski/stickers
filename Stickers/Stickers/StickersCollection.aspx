@@ -78,7 +78,7 @@
             color:White;
             background-repeat: no-repeat;
             background-position: center;
-            width:8%; 
+            width:10%; 
             /*background : red;*/
             font-weight: bold;
             margin:10px;
@@ -88,9 +88,12 @@
         .stickerMissing
         {
             border-radius:5px;  
-            width:8%;
-            color:White;            
+            width:10%;
+            color:White;   
+            /*         
             background :  #b10021;
+            */
+            background: #7fb3af; 
             font-weight: bold;
             margin:10px;
         }
@@ -99,7 +102,7 @@
         .stickerDuplicate
         {
             border-radius:5px;
-            width:8%; 
+            width:10%; 
             /*height:3%;*/
             color:White;            
             background : #00675F;
@@ -111,7 +114,7 @@
         .stickerCollected
         {
             border-radius:5px;  
-            width:8%;
+            width:10%;
             color:White;            
             background :  #03A89E;
             font-weight: bold;
