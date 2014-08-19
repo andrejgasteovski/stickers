@@ -19,6 +19,8 @@ namespace Stickers
         //public static readonly string SELECT_USERS_MISSING_STICKERS = "select * from users where ID not in(select userID from stickerCollections where stickerID in (@stickersIDs))";
         public static readonly string DELETE_STICKER_COLLECTION = "delete from stickerCollections where userID = @userID and stickerID = @stickerID";
 
+        public static readonly string SELECT_USERS_WITH_DUPLICATES = "SELECT distinct userID1 FROM @userIDs where @conditions";
+
 
         int userID;
         int albumID;
@@ -206,6 +208,7 @@ namespace Stickers
             lbSelected.DataBind();
         }
 
+        /*
         private void updateListUsersWithDuplicates(List<Sticker> selectedStickers)
         {
             List<User> users = new List<User>();
@@ -223,6 +226,62 @@ namespace Stickers
             SqlCommand command = new SqlCommand(SELECT_USERS_WITH_DUPLICATES, connection);
             //command.Parameters.AddWithValue("stickersIDs", selectedStickersString);
             
+            try
+            {
+                connection.Open();
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    User user = new User();
+                    user.ID = Convert.ToInt32(dr["ID"].ToString());
+                    user.firstName = dr["firstName"].ToString();
+                    user.lastName = dr["lastName"].ToString();
+                    user.location = dr["location"].ToString();
+                    user.password = dr["password"].ToString();
+                    users.Add(user);
+                }
+            }
+            catch (Exception err)
+            {
+                lblMessage.Text = err.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lbUsersDuplicates.DataSource = users;
+            lbUsersDuplicates.DataBind();
+        }
+        */
+        private void updateListUsersWithDuplicates(List<Sticker> selectedStickers)
+        {
+            List<User> users = new List<User>();
+
+            string duplicateStickersString = "";
+            int i = 1;
+            //Get all the user IDs that have the sticker as a duplicate
+            foreach (Sticker s in selectedStickers)
+            {
+                duplicateStickersString += "(select userID as userID" + i + " from stickerCollections where stickerID=" + s.ID + " and duplicates>1) a" + i + ", ";
+                i++;
+            }
+            duplicateStickersString = duplicateStickersString.Substring(0, duplicateStickersString.Length - 2);
+
+            string conditionsString = "";
+            int j = 1;
+            while (j < i)
+            {
+                conditionsString += "a1.userID1=a" + j + ".userID" + j + " and ";
+                j++;
+            }
+            conditionsString = conditionsString.Substring(0, conditionsString.Length - 5);
+            SqlCommand command = new SqlCommand(SELECT_USERS_WITH_DUPLICATES, connection);
+
+            command.Parameters.AddWithValue("userIDs", duplicateStickersString);
+            command.Parameters.AddWithValue("conditions", conditionsString);
+
             try
             {
                 connection.Open();
