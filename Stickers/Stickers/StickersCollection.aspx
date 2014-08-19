@@ -250,14 +250,11 @@
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
                 <div id="center">
                 <asp:ListBox ID="lbSelected" runat="server" DataTextField="name"></asp:ListBox><br /><br />
-                <asp:Button ID="btnCollect" runat="server" Text="Collect them" 
-                    onclick="btnCollect_Click" />
-&nbsp;<asp:Button ID="btnLose" runat="server" Text="Lost them" onclick="btnLose_Click" />   
-<!--
-&nbsp;<asp:ListBox ID="lbSelected1" runat="server" DataTextField="name"></asp:ListBox>
-                <asp:ListBox ID="lbUsersDuplicates" runat="server"></asp:ListBox>
-                <asp:ListBox ID="lbUsersMissing" runat="server"></asp:ListBox>
--->     
+                <asp:Button ID="btnCollect" runat="server" Text="Collect them" onclick="btnCollect_Click" />&nbsp;
+                <asp:Button ID="btnLose" runat="server" Text="Lost them" onclick="btnLose_Click" />   
+
+                <asp:ListBox ID="lbUsersDuplicates" runat="server" DataTextField="firstName"></asp:ListBox>
+                <asp:ListBox ID="lbUsersMissingStickers" runat="server" DataTextField="firstName"></asp:ListBox>
                 <div class="row">
                
                 <!-- /.col-md-12 -->

@@ -13,6 +13,8 @@ namespace Stickers
         public string firstName  { get; set; }
         public string lastName { get; set; }
         public string location { get; set; }
+        
+        //public string fullName { get; set { fullName = firstName + " " + lastName; } }
         //public DateTime dateOfBirth { get; set; }
         //public DateTime dateOfCreatingAccount { get; set; }
     }

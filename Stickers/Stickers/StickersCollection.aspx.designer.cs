@@ -76,15 +76,6 @@ namespace Stickers {
         protected global::System.Web.UI.WebControls.Button btnLose;
         
         /// <summary>
-        /// lbSelected1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbSelected1;
-        
-        /// <summary>
         /// lbUsersDuplicates control.
         /// </summary>
         /// <remarks>
@@ -94,12 +85,12 @@ namespace Stickers {
         protected global::System.Web.UI.WebControls.ListBox lbUsersDuplicates;
         
         /// <summary>
-        /// lbUsersMissing control.
+        /// lbUsersMissingStickers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbUsersMissing;
+        protected global::System.Web.UI.WebControls.ListBox lbUsersMissingStickers;
     }
 }

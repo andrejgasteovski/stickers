@@ -16,7 +16,8 @@ namespace Stickers
         public static readonly string UPDATE_STICKER_DUPLICATES = "update stickerCollections set duplicates = @duplicates where stickerID = @stickerID and userID = @userID";
         public static readonly string INSERT_STICKER_COLLECTION = "insert into stickerCollections(userID, stickerID, dateOfAcquirement, duplicates) values(@userID, @stickerID, (select CURRENT_TIMESTAMP), @duplicates)";
         //public static readonly string SELECT_USERS_WITH_DUPLICATES = "select * from users where ID in(select distinct userID from stickerCollections where duplicates > 1 and stickerID in (@stickersIDs))";
-        public static readonly string SELECT_USERS_MISSING_STICKERS = "select * from users where ID not in(select userID from stickerCollections where stickerID in (@stickersIDs))";
+        //public static readonly string SELECT_USERS_MISSING_STICKERS = "select * from users where ID not in(select userID from stickerCollections where stickerID in (@stickersIDs))";
+        public static readonly string DELETE_STICKER_COLLECTION = "delete from stickerCollections where userID = @userID and stickerID = @stickerID";
 
 
         int userID;
@@ -63,8 +64,6 @@ namespace Stickers
                 }
             }
             
-
-
         }
 
         //fetch all the stickers that user has collected, including duplicates
@@ -192,8 +191,8 @@ namespace Stickers
             lbSelected.DataSource = selectedStickers;
             lbSelected.DataBind();
 
-            updateListUsersWithDuplicates(selectedStickers);   
-            //tuka da se povika metod za updateListUsersMisssingStickers (treba da se implementira)
+            updateListUsersWithDuplicates(selectedStickers);
+            updateListUsersMisssingStickers(selectedStickers);
 
 
             button.CssClass = Sticker.CSS_CLASS_STICKER_CHECKED;
@@ -222,7 +221,7 @@ namespace Stickers
             string SELECT_USERS_WITH_DUPLICATES = SELECT_USERS_WITH_DUPLICATES = "select * from users where ID in(select distinct userID from stickerCollections where duplicates > 1 and stickerID in (" + selectedStickersString + "))";
             
             SqlCommand command = new SqlCommand(SELECT_USERS_WITH_DUPLICATES, connection);
-            command.Parameters.AddWithValue("stickersIDs", selectedStickersString);
+            //command.Parameters.AddWithValue("stickersIDs", selectedStickersString);
             
             try
             {
@@ -253,6 +252,48 @@ namespace Stickers
             lbUsersDuplicates.DataBind();
         }
 
+        private void updateListUsersMisssingStickers(List<Sticker> selectedStickers)
+        { 
+            List<User> users = new List<User>();
+            string selectedStickersString = "";
+            foreach (Sticker s in selectedStickers)
+            {
+                selectedStickersString += s.ID + ", ";
+            }
+            selectedStickersString = selectedStickersString.Substring(0, selectedStickersString.Length - 2);
+
+            string SELECT_USERS_MISSING_STICKERS = "select * from users where ID not in(select userID from stickerCollections where stickerID in (" + selectedStickersString + "))";
+            SqlCommand command = new SqlCommand(SELECT_USERS_MISSING_STICKERS, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    User user = new User();
+                    user.ID = Convert.ToInt32(dr["ID"].ToString());
+                    user.firstName = dr["firstName"].ToString();
+                    user.lastName = dr["lastName"].ToString();
+                    user.location = dr["location"].ToString();
+                    user.password = dr["password"].ToString();
+                    users.Add(user);
+                }
+            }
+            catch (Exception err)
+            {
+                lblMessage.Text = err.Message;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lbUsersMissingStickers.DataSource = users;
+            lbUsersMissingStickers.DataBind();
+        }
+
 
         //nadolu se eventi za kopcinjata collect i lost stickers
 
@@ -264,13 +305,17 @@ namespace Stickers
             {
                 int newDuplicates = s.duplicates + 1;
 
-                SqlCommand command;
-                if (newDuplicates == 1)
-                    command = new SqlCommand(INSERT_STICKER_COLLECTION, connection);
-                else
-                    command = new SqlCommand(UPDATE_STICKER_DUPLICATES, connection);
+                SqlCommand commandDelete = new SqlCommand(DELETE_STICKER_COLLECTION, connection);
+                commandDelete.Parameters.AddWithValue("userID", userID);
+                commandDelete.Parameters.AddWithValue("stickerID", s.ID);
 
-                executeQuery(command, s.ID, newDuplicates);
+                SqlCommand commandInsert = new SqlCommand(INSERT_STICKER_COLLECTION, connection);
+                commandInsert.Parameters.AddWithValue("stickerID", s.ID);
+                commandInsert.Parameters.AddWithValue("duplicates", newDuplicates);
+                commandInsert.Parameters.AddWithValue("userID", userID);
+
+                executeCommand(commandDelete);
+                executeCommand(commandInsert);
             }
 
             ViewState["selectedStickers"] = null;
@@ -291,7 +336,11 @@ namespace Stickers
                 if (newDuplicates > -1)
                 {
                     command = new SqlCommand(UPDATE_STICKER_DUPLICATES, connection);
-                    executeQuery(command, s.ID, newDuplicates);
+                    command.Parameters.AddWithValue("stickerID", s.ID);
+                    command.Parameters.AddWithValue("duplicates", newDuplicates);
+                    command.Parameters.AddWithValue("userID", userID);
+
+                    executeCommand(command);
                 }
             }
 
@@ -300,12 +349,8 @@ namespace Stickers
             BindListView();
         }
 
-        private void executeQuery(SqlCommand command, int stickerID, int newDuplicates)
+        private void executeCommand(SqlCommand command)
         {
-            command.Parameters.AddWithValue("stickerID", stickerID);
-            command.Parameters.AddWithValue("duplicates", newDuplicates);
-            command.Parameters.AddWithValue("userID", userID);
-
             try
             {
                 connection.Open();
