@@ -277,10 +277,8 @@ namespace Stickers
                 j++;
             }
             conditionsString = conditionsString.Substring(0, conditionsString.Length - 5);
-            SqlCommand command = new SqlCommand(SELECT_USERS_WITH_DUPLICATES, connection);
-
-            command.Parameters.AddWithValue("userIDs", duplicateStickersString);
-            command.Parameters.AddWithValue("conditions", conditionsString);
+            string SELECT_USERS_DUPLICATES = "select * from users where id in (SELECT distinct userID1 FROM " + duplicateStickersString + " where " + conditionsString + ")";
+            SqlCommand command = new SqlCommand(SELECT_USERS_DUPLICATES, connection);
 
             try
             {
@@ -310,6 +308,7 @@ namespace Stickers
             lbUsersDuplicates.DataSource = users;
             lbUsersDuplicates.DataBind();
         }
+
 
         private void updateListUsersMisssingStickers(List<Sticker> selectedStickers)
         { 
