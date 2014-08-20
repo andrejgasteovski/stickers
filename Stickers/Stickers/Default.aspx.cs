@@ -35,7 +35,7 @@ namespace Stickers
             //na krajot, ovoj blok da se izbrise
             {
                 Session["userID"] = 2;
-                Response.Redirect("Profile.aspx");
+                Response.Redirect("MyProfile.aspx");
             }
 
             //na krajot ovoj celiot blok da se odkomentira
@@ -75,7 +75,7 @@ namespace Stickers
 
                 if (Session["userID"] != null)
                 {
-                    Response.Redirect("Profile.aspx");
+                    Response.Redirect("MyProfile.aspx");
                 }
                 else
                 {

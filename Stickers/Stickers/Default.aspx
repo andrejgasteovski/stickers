@@ -231,23 +231,24 @@
 
                     
                     <!-- treti red, slika 1 -->
-                    <!-- 
-                    <div class="col-md-2 col-sm-6 col-md-offset-3">
+                   
+                    <div class="col-md-2 col-sm-6 col-md-offset-3" style="margin-left: -43.66666%; margin-top: 38.5%; width: 26.666667%;">
                         <div class="gallery-item">
                             <div class="image">
                                 <div class="overlay">
-                                    <a href="images/gallery/gallery-item10.jpg" data-rel="lightbox" class="fa fa-expand">
+                                    <a href="images/gallery/gallery-item10.jpg" data-rel="lightbox" class="fa fa-expand" >
                                     </a>
                                 </div>
-                                <img src="images/gallery/gallery-item10.jpg" alt="image 10">
+                                <asp:Image ID="imgSpiderman" runat="server" src="images/gallery/spiderman.jpg" alt="The Amazing Spiderman 2"/>
                             </div>
                             <div class="content-gallery">
                                 <h3>
-                                    Download</h3>
+                                    The Amazing Spiderman 2
+                                </h3>
                             </div>
                         </div>
                     </div>
-                    -->
+                   
 
 
                     <!-- treti red, slika 2 -->
