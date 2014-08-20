@@ -80,26 +80,33 @@
         <div class="container">
             <div class="row">
                 <!-- /.col-md-12 -->
-                <div id="center">
-                <!--                        Tuka body-to!!!!                           -->
-
-                <asp:ListBox ID="lbAlbumsCollected" runat="server" onselectedindexchanged="lbAlbumsCollected_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
-                <asp:ListBox ID="lbStickersFromAlbum" runat="server" Visible="true" DataTextField="name"></asp:ListBox>
-
+                <div id="center">    
+                <center>          
+               <div>
+                <asp:ListBox ID="lbAlbumsCollected" runat="server" 
+                       onselectedindexchanged="lbAlbumsCollected_SelectedIndexChanged" 
+                       AutoPostBack="True" BackColor="#00675F" ForeColor="White"></asp:ListBox>
+                </div>
+                <br /><div>
+                <asp:ListBox ID="lbStickersFromAlbum" runat="server" Visible="true" 
+                            DataTextField="name" BackColor="#00675F" ForeColor="White"></asp:ListBox>
+                </div>
+                <br /><div>
                 <asp:Label ID="lblName" runat="server"></asp:Label>
+                </div><div>
                 <asp:Label ID="lblLocation" runat="server"></asp:Label>
+                </div><div>
                 <asp:Label ID="lblDateOfBirth" runat="server"></asp:Label> <!-- Born: -->
+                </div><div>
                 <asp:Label ID="lblDateOfCreatingAccount" runat="server"></asp:Label>  <!-- Member since: -->
+                </div><div>
                 <asp:Label ID="lblEmail" runat="server"></asp:Label>
 
-
-
-
-                
-
-
+                </div><div>
 
                 <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
+                </div>
+                </center>
                 </div>
                 <!-- /.row -->
             </div>
