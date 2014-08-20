@@ -22,7 +22,69 @@
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
     <!-- ovde go pisuvam nasiot css -->
     <style type="text/css">
+            #login
+        {
+            background :  #b10021;
+            color:White;  
+            box-shadow: none;
+            border-radius:5px;
+            width: 30%;
+            border-collapse: separate;
+            border-spacing: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 3px dotted  white;
+        }
         
+                
+        tr:nth-child(odd) td 
+        {
+            background :  #b10021;
+        }
+        
+        td:first-child {
+            box-shadow: none;
+            border:none;
+        }
+         tr:last-of-type td
+        {
+            box-shadow: none;
+        }
+        
+        tr:last-of-type td:first-child
+        {
+            box-shadow: none;
+        }
+        
+        tr:last-of-type td:last-child
+        {
+            box-shadow: none;
+        }
+        /*novi */
+        td:first-child
+		{
+            box-shadow: none;
+        }
+        
+        td:last-child
+		{
+            border-right: none;
+            box-shadow:none;
+        }
+        
+        #btnLogin
+        {
+            background : #00675F;
+            border-radius:5px;
+            width: 50%;
+            height:140%;
+        }
+        
+         #btnLogin:hover
+         {
+             width:60%;
+             height:150%;
+         }
     </style>
 </head>
 <body>
@@ -77,25 +139,25 @@
     <!-- /.site-header -->
     <!-- /#menu-container -->
     <div id="templatemo_footer">
-        <div class="container">
+        <div class="container" id="logForm">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <table align="center">
+                    <table align="center" id="login">
                         <tr class="row">
                             <td>
                                 E-mail</td>
                             <td>
-                                <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbEmail" runat="server" Height="35px" Width="115px"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 Password</td>
                             <td>
-                                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password" Height="35px" Width="115px"></asp:TextBox>
                             </td>
                         </tr>
-                        <tr class="row">
+                        <tr class="row" colspan="2">
                             <td>
                                 <asp:Button ID="btnLogin" runat="server" Text="Login" onclick="btnLogin_Click"></asp:Button>
                             </td>
