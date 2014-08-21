@@ -17,14 +17,8 @@ namespace Stickers
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            connection = (SqlConnection)Session["connection"];
-            
-            //na krajot, ovoj if da se odkomentira
-            /*
-            if (connection == null)
-            {
-                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString);
-            } */
+            connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
             
             if (!IsPostBack)
             {

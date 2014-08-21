@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Stickers
 {
@@ -36,7 +37,8 @@ namespace Stickers
             else
             {
                 userID = Convert.ToInt32(Session["userID"].ToString());
-                connection = (SqlConnection)Session["connection"];
+                connection = new SqlConnection();
+                connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
             }
 
             if (!this.IsPostBack)

@@ -15,15 +15,9 @@ namespace Stickers
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            connection = (SqlConnection)Session["connection"];
+            connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
 
-            //na krajot, ovoj if da se odkomentira
-            /*
-            if (connection == null)
-            {
-                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString);
-            } 
-            */
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

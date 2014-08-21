@@ -83,6 +83,23 @@
                 <div id="center">
                 <!--                        Tuka body-to!!!!                           -->
 
+                <asp:ListBox ID="lbAlbumsCollected" runat="server" onselectedindexchanged="lbAlbumsCollected_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
+                <asp:ListBox ID="lbStickersFromAlbum" runat="server" Visible="true" DataTextField="name"></asp:ListBox>
+
+                <asp:Label ID="lblName" runat="server"></asp:Label>
+                <asp:Label ID="lblLocation" runat="server"></asp:Label>
+                <asp:Label ID="lblDateOfBirth" runat="server"></asp:Label> <!-- Born: -->
+                <asp:Label ID="lblDateOfCreatingAccount" runat="server"></asp:Label>  <!-- Member since: -->
+                <asp:Label ID="lblEmail" runat="server"></asp:Label>
+
+
+
+
+                
+
+
+
+                <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
                 </div>
                 <!-- /.row -->
             </div>

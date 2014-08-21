@@ -17,5 +17,7 @@ namespace Stickers
             this.name = name;
             this.publisher = publisher;
         }
+
+        public Album() { }
     }
 }

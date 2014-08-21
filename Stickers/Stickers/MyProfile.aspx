@@ -95,7 +95,7 @@
         .btnSubmit:hover
         {
             width: 15%;
-            height:53px;   
+            height:53px;  
         }
         .btnEdit
         {
@@ -261,7 +261,7 @@
                                         </asp:Table>
                                     </div>
                                     <div style="text-align: center">
-                                        <asp:Button ID="btnSubmitEditProfile" runat="server" Text="Submit"  onclick="btnSubmitEditProfile_Click"  CssClass="btnSubmit" onclick="btnSubmitEditProfile_Click" />
+                                        <asp:Button ID="btnSubmitEditProfile" runat="server" Text="Submit"  onclick="btnSubmitEditProfile_Click"  CssClass="btnSubmit"/>
                                     <!--BackColor="#00675F"
                                             BorderColor="#FF5151" ForeColor="White" onclick="btnSubmitEditProfile_Click" -->
 									</div>
