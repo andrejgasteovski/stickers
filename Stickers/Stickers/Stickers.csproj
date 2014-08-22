@@ -55,6 +55,7 @@
   <ItemGroup>
     <Content Include="AdminAlbums.aspx" />
     <Content Include="AdminStickers.aspx" />
+    <Content Include="AdminUsers.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Message.aspx" />
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="AdminStickers.aspx.designer.cs">
       <DependentUpon>AdminStickers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Album.cs" />
     <Compile Include="Default.aspx.cs">
