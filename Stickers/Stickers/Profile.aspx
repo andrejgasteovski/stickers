@@ -102,6 +102,13 @@
                 </div><div>
                 <asp:Label ID="lblEmail" runat="server"></asp:Label>
 
+                <asp:Button id="btnSendMessage" runat="server" Text="Send message" 
+                            onclick="btnSendMessage_Click"/>
+
+
+
+
+
                 </div><div>
 
                 <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>

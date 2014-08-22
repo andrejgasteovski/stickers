@@ -182,5 +182,20 @@ namespace Stickers
             }
             lbStickersFromAlbum.DataSource = stickers;
         }
+
+        protected void btnSendMessage_Click(object sender, EventArgs e)
+        {
+            int albumID;
+            if (lbAlbumsCollected.SelectedIndex != -1)
+                albumID = Convert.ToInt32(lbAlbumsCollected.SelectedValue);
+            else
+                albumID = 1;
+            Session["albumID"] = albumID;
+            Session["userProfileID"] = userProfileID;
+
+            Response.Redirect("Message.aspx");
+
+            
+        }
     }
 }
