@@ -119,6 +119,8 @@
             <script type="text/javascript" src="js/tabs.js"></script>
             <script type="text/javascript" src="js/jquery.lightbox.js"></script>
             <script type="text/javascript" src="js/templatemo_custom.js"></script>
+        </div>
+        <asp:Label ID="lblMessage" runat="server"></asp:Label>
         </form>
     </body>
 </html>

@@ -6,22 +6,25 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace Stickers
 {
     public partial class AdminAlbums : System.Web.UI.Page
     {
+        SqlConnection conn;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
+
             if (!IsPostBack)
                 connect();
         }
 
         public void connect()
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=BETI-PC\\SQLEXPRESS;Initial Catalog=stickers;Integrated Security=True";
-
             string query = "select * from albums;";
             SqlCommand comm = new SqlCommand(query, conn);
             SqlDataAdapter adapter = new SqlDataAdapter(comm);
@@ -36,11 +39,13 @@ namespace Stickers
                 // Response.Write("Vlaga neso");
                 ViewState["dataset"] = ds;
             }
-            catch
+            catch(Exception err)
             {
+                lblMessage.Text = err.Message;
             }
             finally
             {
+                conn.Close();
             }
 
 
@@ -65,9 +70,6 @@ namespace Stickers
 
         protected void gvAlbums_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=BETI-PC\\SQLEXPRESS;Initial Catalog=stickers;Integrated Security=True";
-
             string query = "UPDATE albums set name=@name, publisher=@publisher where id=@id";
             SqlCommand command = new SqlCommand(query, conn);
 
@@ -77,6 +79,10 @@ namespace Stickers
             TextBox tbPublisher = (TextBox)gvAlbums.Rows[e.RowIndex].Cells[2].Controls[0];
             command.Parameters.AddWithValue("@publisher", tbPublisher.Text);
 
+            TextBox tbID = (TextBox)gvAlbums.Rows[e.RowIndex].Cells[0].Controls[0];
+            command.Parameters.AddWithValue("@id", Convert.ToInt32(tbID.Text));
+
+
             int effect = 0;
             try
             {
@@ -85,7 +91,7 @@ namespace Stickers
             }
             catch (Exception err)
             {
-
+                lblMessage.Text = err.Message;
             }
             finally {
                 conn.Close();
