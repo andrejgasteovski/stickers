@@ -79,7 +79,7 @@ namespace Stickers
             TextBox tbNumber = (TextBox)gvStickers.Rows[e.RowIndex].Cells[2].Controls[0];
             command.Parameters.AddWithValue("@number", tbNumber.Text);
 
-          //  TextBox tbID = (TextBox)gvStickers.Rows[e.RowIndex].Cells[0].Controls[0];
+            string tbID = gvStickers.Rows[e.RowIndex].Cells[0].Text;
             command.Parameters.AddWithValue("@id", Convert.ToInt32(gvStickers.Rows[e.RowIndex].Cells[0].Text));
 
 

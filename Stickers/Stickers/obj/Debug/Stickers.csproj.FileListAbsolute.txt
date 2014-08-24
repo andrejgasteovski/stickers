@@ -42,3 +42,4 @@ C:\Users\WIN\Desktop\New folder\Stickers\Stickers\obj\Debug\Stickers.Properties.
 C:\Users\WIN\Desktop\New folder\Stickers\Stickers\obj\Debug\Stickers.csproj.GenerateResource.Cache
 C:\Users\WIN\Desktop\New folder\Stickers\Stickers\obj\Debug\Stickers.dll
 C:\Users\WIN\Desktop\New folder\Stickers\Stickers\obj\Debug\Stickers.pdb
+C:\Users\agasteovski.TRICODE\Documents\GitHub\stickers\Stickers\Stickers\bin\AjaxMin.dll

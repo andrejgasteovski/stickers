@@ -79,8 +79,8 @@ namespace Stickers
             TextBox tbPublisher = (TextBox)gvAlbums.Rows[e.RowIndex].Cells[2].Controls[0];
             command.Parameters.AddWithValue("@publisher", tbPublisher.Text);
 
-           // TextBox tbID = (TextBox)gvAlbums.Rows[e.RowIndex].Cells[0].Controls[0];
-            command.Parameters.AddWithValue("@id", Convert.ToInt32(command.Parameters.AddWithValue("@id", Convert.ToInt32(gvAlbums.Rows[e.RowIndex].Cells[0].Text))));
+            int id = Convert.ToInt32(gvAlbums.Rows[e.RowIndex].Cells[0].Text);
+            command.Parameters.AddWithValue("@id", id);
 
 
             int effect = 0;
