@@ -34,7 +34,7 @@ namespace Stickers
         {
 
             //koga se raboti so baza, ovoj blok da se odkomentira
-            
+
             {
                 if (Session["userID"] == null || Session["albumID"] == null)
                 {
@@ -48,13 +48,13 @@ namespace Stickers
                     connection = new SqlConnection();
                     connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
                 }
-            
+
 
                 if (!IsPostBack)
                 {
                     BindListView();
                     selectedStickers = new List<Sticker>();
-                    lbSelected.DataSource = selectedStickers;   
+                    lbSelected.DataSource = selectedStickers;
                 }
                 else
                 {

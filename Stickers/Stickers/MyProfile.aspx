@@ -23,6 +23,11 @@
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
     <!-- ovde go pisuvam nasiot css -->
     <style type="text/css">
+         @font-face 
+        {
+            font-family: myFirstFont;
+            src: url(fonts/Quicksand-Bold.otf);
+        }
         .loginTextBox
         {
             font-size: 12px;

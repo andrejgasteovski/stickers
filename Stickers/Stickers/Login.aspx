@@ -22,31 +22,49 @@
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
     <!-- ovde go pisuvam nasiot css -->
     <style type="text/css">
-            #login
+        @font-face
         {
-            background :  #b10021;
-            color:White;  
+            font-family: myTitleFont;
+            src: url(fonts/Raditad.ttf);
+        }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(fonts/Quicksand-Bold.otf);
+        }
+        
+        #login
+        {
+            background: #b10021;
+            color: White;
             box-shadow: none;
-            border-radius:5px;
+            border-radius: 5px;
             width: 30%;
             border-collapse: separate;
             border-spacing: 15px;
             margin-left: auto;
             margin-right: auto;
-            border: 3px dotted  white;
+            border: 3px dotted white; /* font-family:myFirstFont;*/
         }
-        
-                
-        tr:nth-child(odd) td 
+        #tbPassword,#tbEmail
         {
-            background :  #b10021;
+            width:90% ! important;
+            border-radius:5px;
+            text-align:center;
         }
         
-        td:first-child {
-            box-shadow: none;
-            border:none;
+        
+        tr:nth-child(odd) td
+        {
+            background: #b10021;
         }
-         tr:last-of-type td
+        
+        td:first-child
+        {
+            box-shadow: none;
+            border: none;
+        }
+        tr:last-of-type td
         {
             box-shadow: none;
         }
@@ -62,41 +80,57 @@
         }
         /*novi */
         td:first-child
-		{
+        {
             box-shadow: none;
         }
         
         td:last-child
-		{
+        {
             border-right: none;
-            box-shadow:none;
+            box-shadow: none;
         }
         
         #btnLogin
         {
-            background : #00675F;
-            border-radius:5px;
-            width: 50%;
-            height:140%;
+            background: #00675F;
+            border-radius: 5px;
+            width: 90%;
+            height: 140%;
         }
         
-         #btnLogin:hover
-         {
-             width:60%;
-             height:150%;
-         }
+        #btnLogin:hover
+        {
+            width: 100%;
+            height: 150%;
+        }
+        
+        .row
+        {
+            font-size: 15px;
+        }
+        /* tamara was here */
+        .siteTitle
+        {
+            font-size: 50px;
+            color: White;
+            font-family: myTitleFont;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div class="site-header">
         <div class="main-navigation">
+        <!-- tamara was here again -->
+        <div class="siteTitle">STICKERS</div>
+        <br />
+        <br />
             <div class="responsive_menu">
                 <ul>
-                    <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                    <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                    <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                    <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                    <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                    <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                 </ul>
             </div>
             <div class="container">
@@ -107,10 +141,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                            <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                            <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                            <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                            <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                            <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
@@ -126,7 +160,7 @@
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
                         <h1>
-                            Login</h1>
+                            LOGIN</h1>
                     </a>
                     <!-- /.logo -->
                 </div>
@@ -144,21 +178,18 @@
                 <div class="col-md-12 text-center">
                     <table align="center" id="login">
                         <tr class="row">
-                            <td>
-                                E-mail</td>
-                            <td>
-                                <asp:TextBox ID="tbEmail" runat="server" Height="35px" Width="115px"></asp:TextBox>
+                            <td colspan="2">
+                                <asp:TextBox ID="tbEmail" runat="server"  placeholder="E-mail" Height="35px" Width="115px"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
-                            <td>
-                                Password</td>
-                            <td>
-                                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password" Height="35px" Width="115px"></asp:TextBox>
+               
+                            <td colspan="2">
+                                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"  placeholder="Password" Height="35px" Width="115px"></asp:TextBox>
                             </td>
                         </tr>
-                        <tr class="row" colspan="2">
-                            <td>
+                        <tr class="row">
+                            <td colspan="2">
                                 <asp:Button ID="btnLogin" runat="server" Text="Login" onclick="btnLogin_Click"></asp:Button>
                             </td>
                         </tr>

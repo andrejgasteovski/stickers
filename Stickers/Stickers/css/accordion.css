@@ -18,6 +18,8 @@
             border: 1px solid #b10021;
             border-radius:10px;
             font-weight: bold;
+			/*definiranje golemina*/
+			font-size:15px;
 			height:45px;
             padding: 5px 20px;
             position: relative;
@@ -48,6 +50,8 @@
             position: relative;
             z-index: 20;
             font-weight: bold;
+			/*definiranje golemina */
+			font-size:15px;
             display: block;
             cursor: pointer;
             color: #fff;
@@ -59,7 +63,8 @@
         {
             border: 1px solid #b10021;
              border-radius:10px;
-            background-color: #ffecef;
+			 /* nova boja za pozadinata */
+            background-color: #ffebe1;
             border-top: none;
             padding: 5px;
             padding-top: 10px;

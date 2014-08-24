@@ -20,17 +20,64 @@
     <link rel="stylesheet" href="css/templatemo_style.css" />
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
+    <!-- ovde go pisuvam nasiot css -->
+    <style type="text/css">
+        /* tamara was here */
+        @font-face
+        {
+            font-family: myTitleFont;
+            src: url(fonts/Raditad.ttf);
+        }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(fonts/Quicksand-Bold.otf);
+        }
+        .container
+        {
+            font-family:myFirstFont;
+        }
+        .siteTitle
+        {
+            font-size: 50px;
+            color: White;
+            font-family: myTitleFont;
+        }
+        #lbAlbumsCollected, #lbStickersFromAlbum
+        {
+            width:55%;
+        }
+        #btnSendMessage
+        {
+            background-image:url(img/envelope.png);
+            background-color:transparent;
+            background-size:100% 100%;
+            background-repeat: no-repeat;
+            width:10%;
+            height:20%;
+        }
+        .userInfo
+        {
+            border: 3px dotted  #b10021;
+            border-radius:5px;
+            width:55%;
+        }
+    </style>
 </head>
 <body>
     <form id="form2" runat="server">
     <div class="site-header">
         <div class="main-navigation">
+         <!-- tamara was here again -->
+        <div class="siteTitle">STICKERS</div>
+        <br />
+        <br />
             <div class="responsive_menu">
                 <ul>
-                    <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                    <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                    <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                    <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                    <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                    <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                 </ul>
             </div>
             <div class="container">
@@ -41,10 +88,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                            <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                            <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                            <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                            <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                            <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
@@ -60,7 +107,7 @@
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
                         <h1 id="title">
-                            Stickers</h1>
+                            STICKERS</h1>
                         <br />
                     </a>
                     <!-- /.logo -->
@@ -91,7 +138,11 @@
                 <asp:ListBox ID="lbStickersFromAlbum" runat="server" Visible="true" 
                             DataTextField="name" BackColor="#00675F" ForeColor="White"></asp:ListBox>
                 </div>
-                <br /><div>
+                <br />
+                <!-- tamara was here -->
+                <div class="userInfo">
+                <div><label><strong>USER INFORMATION:</strong></label></div>
+                <div>
                 <asp:Label ID="lblName" runat="server"></asp:Label>
                 </div><div>
                 <asp:Label ID="lblLocation" runat="server"></asp:Label>
@@ -101,15 +152,14 @@
                 <asp:Label ID="lblDateOfCreatingAccount" runat="server"></asp:Label>  <!-- Member since: -->
                 </div><div>
                 <asp:Label ID="lblEmail" runat="server"></asp:Label>
+                <!-- tamara was here to put an empty line -->
+                <br />
+                <asp:Button id="btnSendMessage" runat="server" Text="" 
+                            onclick="btnSendMessage_Click" />
+                <br />
+                </div>
 
-                <asp:Button id="btnSendMessage" runat="server" Text="Send message" 
-                            onclick="btnSendMessage_Click"/>
-
-
-
-
-
-                </div><div>
+                </div>
 
                 <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
                 </div>

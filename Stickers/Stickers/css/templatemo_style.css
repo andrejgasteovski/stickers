@@ -1,5 +1,18 @@
 /* Credit: http://www.templatemo.com */
 
+/* definiranje font*/
+@font-face 
+ {
+        font-family: myFirstFont;
+        src: url(fonts/Quicksand-Bold.otf);
+ }
+ 
+@font-face 
+ {
+        font-family: myTitleFont;
+        src: url(fonts/Raditad.ttf);
+ }
+ 
 .site-header .main-navigation ul, .services #icons ul, .about #icons-about ul {
   padding: 0;
   margin: 0;
@@ -27,8 +40,16 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+ /* font: inherit; */
   vertical-align: baseline;
+}
+
+ /* tamara was here */
+ .siteTitle
+  {
+             font-size:50px;
+             color:White;
+             font-family:myTitleFont;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -68,7 +89,9 @@ table {
 
 body {
   background-color: white;
-  font-family: 'Open Sans', Arial, sans-serif;
+  /*font-family: 'Open Sans', Arial, sans-serif;*/
+  /*implementacija na font */
+  font-family:myFirstFont;
   color: #777777;
   font-size: 14px;
   line-height: 1.75em;

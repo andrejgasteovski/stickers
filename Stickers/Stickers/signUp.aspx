@@ -22,6 +22,56 @@
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
     <!-- ovde go pisuvam nasiot css -->
     <style type="text/css">
+        /* tamara was here */
+         @font-face
+        {
+            font-family: myTitleFont;
+            src: url(fonts/Raditad.ttf);
+        }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(fonts/Quicksand-Bold.otf);
+        }
+         .siteTitle
+        {
+            font-size: 50px;
+            color: White;
+            font-family: myTitleFont;
+        }
+        .content
+        {
+            font-family:myFirstFont;
+        }
+        .tableSignUp
+        {
+            background-color:#b10021;
+            border: 3px dotted white;
+            width:50%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        
+        #btnSubmit
+        {
+            background-color: #00675F ! important;
+            border-radius: 5px;
+            width: 60%;
+            height: 90%;
+        }
+         #btnSubmit:hover
+        {
+            width: 70%;
+            height: 100%;
+        }
+        .signUpTextBoxes
+        {
+            width:60%;
+            border-radius:5px;
+            margin:5px;
+            text-align:center;
+        }
+        
         
     </style>
 </head>
@@ -29,12 +79,16 @@
     <form id="form1" runat="server">
     <div class="site-header">
         <div class="main-navigation">
+         <!-- tamara was here again -->
+        <div class="siteTitle">STICKERS</div>
+        <br />
+        <br />
             <div class="responsive_menu">
                 <ul>
-                    <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                    <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                    <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                    <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                    <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                    <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                 </ul>
             </div>
             <div class="container">
@@ -45,10 +99,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                            <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                            <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                            <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                            <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                            <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
@@ -64,7 +118,7 @@
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
                         <h1>
-                            Sign up</h1>
+                            SIGN UP</h1>
                     </a>
                     <!-- /.logo -->
                 </div>
@@ -80,10 +134,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
+                <div class="tableSignUp">
+                <br />
                     <table align="center">
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server" class="signUpTextBoxes"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                     ControlToValidate="tbFirstName" Display="Dynamic" ErrorMessage="Enter name!" 
                                     ForeColor="Red"></asp:RequiredFieldValidator>
@@ -91,7 +147,7 @@
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server" ></asp:TextBox>
+                                <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server" class="signUpTextBoxes"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                     ControlToValidate="tbLastName" Display="Dynamic" ErrorMessage="Enter surname!" 
                                     ForeColor="Red"></asp:RequiredFieldValidator>
@@ -99,7 +155,7 @@
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:Label ID="Label4" runat="server" Text="Date of birth:" Font-Bold="True"></asp:Label>
+                                <asp:Label ID="Label4" runat="server" Text="Date of birth:" Font-Bold="True" ForeColor="White" Font-Underline="True"></asp:Label>
                             </td>
                         </tr>
                         <tr class="row">
@@ -118,7 +174,7 @@
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbLocation" placeholder="Location" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbLocation" placeholder="Location" runat="server" class="signUpTextBoxes"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                     ControlToValidate="tbLocation" Display="Dynamic" ErrorMessage="Enter location!" 
                                     ForeColor="Red"></asp:RequiredFieldValidator>
@@ -126,7 +182,7 @@
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server" class="signUpTextBoxes"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                                     ControlToValidate="tbEmail" Display="Dynamic" ErrorMessage="Enter e-mail!" 
                                     ForeColor="Red"></asp:RequiredFieldValidator>
@@ -135,7 +191,7 @@
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbPassword" placeholder="Password" runat="server" 
-                                    TextMode="Password" ></asp:TextBox>
+                                    TextMode="Password" class="signUpTextBoxes"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                                     ControlToValidate="tbPassword" Display="Dynamic" ErrorMessage="Enter password!" 
                                     ForeColor="Red"></asp:RequiredFieldValidator>
@@ -144,7 +200,7 @@
                          <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbPasswordConfirm" placeholder="Re-enter password" runat="server" 
-                                    TextMode="Password" ></asp:TextBox>
+                                    TextMode="Password" class="signUpTextBoxes"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                                     ControlToValidate="tbPasswordConfirm" Display="Dynamic" ErrorMessage="Re-enter password!" 
                                     ForeColor="Red"></asp:RequiredFieldValidator>
@@ -155,13 +211,16 @@
                         </tr>
                         <tr class="row">
                             <td>
-                                <asp:Button CssClass="button" ID="btnSubmit" runat="server" Text="Submit" 
+                                <asp:Button CssClass="button" ID="btnSubmit" runat="server" Text="SUBMIT" 
                                 BackColor="#B00B02" ForeColor="White" Font-Bold="True" 
                                     onclick="btnSubmit_Click"  />
                              </td>
                         </tr>
                       
                     </table>
+                    <br />
+                    <br />
+                    </div>
                 </div>
                 <!-- /.col-md-12 -->
             </div>

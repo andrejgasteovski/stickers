@@ -22,36 +22,57 @@
     
     <!-- ovde go pisuvam nasiot css -->    
     <style type="text/css">
-         .loginTextBox
-         {
-	        font-size: 12px;
-	        padding: 1px;
-	        color: rgb(139, 139, 139);
-	        height: 20px;
-	        width: 100px;
-	        line-height: 15px;
-          }
-          
-          .loginButton
-          {
+        /* tamara was here */
+        @font-face
+        {
+            font-family: myTitleFont;
+            src: url(fonts/Raditad.ttf);
+        }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(fonts/Quicksand-Bold.otf);
+        }
+        .siteTitle
+        {
+            font-size: 50px;
+            margin-left:20.5%;
+            color: White;
+            font-family: myTitleFont;
+        }
+        .content
+        {
+            font-family: myFirstFont;
+        }
+        .loginTextBox
+        {
+            font-size: 12px;
+            padding: 1px;
+            color: rgb(139, 139, 139);
+            height: 20px;
+            width: 100px;
+            line-height: 15px;
+        }
+        
+        .loginButton
+        {
             width: 50px;
             height: 18px;
             line-height: 0px;
             color: #b10021;
             font-size: 12px;
-          }
-          
-          .signUp
-          {
+        }
+        
+        .signUp
+        {
             font-size: 11px;
-            color: White;    
-          }
-          
-          .rightCell
-          {
-            padding-left: 20px;    
-          }
-
+            color: White;
+        }
+        
+        .rightCell
+        {
+            padding-left: 20px;
+        }
     </style>
 
 
@@ -85,12 +106,16 @@
 
 
         <div class="main-navigation">
+          <!-- tamara was here again -->
+        <div class="siteTitle">STICKERS</div>
+        <br />
+        <br />
             <div class="responsive_menu">
                 <ul>
-                    <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                    <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                    <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                    <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                    <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                    <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                 </ul>
             </div>
             <div class="container">
@@ -101,10 +126,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                            <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                            <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                            <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                            <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                            <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
@@ -119,7 +144,7 @@
                 <div class="col-md-12 text-center">
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
-                        <h1>Stickers</h1>
+                        <h1>STICKERS</h1>
                     </a>
                     <!-- /.logo -->
                 </div>

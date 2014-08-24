@@ -25,6 +25,27 @@
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
     <!-- ovde go pisuvam nasiot css -->    
     <style type="text/css">
+        /* tamara was here */
+         @font-face
+        {
+            font-family: myFirstFont;
+            src: url(fonts/Quicksand-Bold.otf);
+        }
+        .container
+        {
+            font-family:myFirstFont;
+        }
+        @font-face
+        {
+            font-family: myTitleFont;
+            src: url(fonts/Raditad.ttf);
+        }
+        .siteTitle
+        {
+            font-size: 50px;
+            color: White;
+            font-family: myTitleFont;
+        }
         .btnCss
         {
              border-radius:5px;  
@@ -142,8 +163,8 @@
         }
         #center
         {
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 31%;
+            /*margin-right: auto;*/
             width: 35%;
             
         }
@@ -170,12 +191,16 @@
     <form id="form2" runat="server">
     <div class="site-header">
         <div class="main-navigation">
+         <!-- tamara was here again -->
+        <div class="siteTitle">STICKERS</div>
+        <br />
+        <br />
             <div class="responsive_menu">
                 <ul>
-                    <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                    <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                    <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                    <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                    <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                    <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                 </ul>
             </div>
             <div class="container">
@@ -186,10 +211,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                            <li><a class="show-2 templatemo_page2" href="#">Collectors</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">Blog</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">My Profile</a></li>
+                            <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
+                            <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
+                            <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
+                            <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
@@ -204,7 +229,7 @@
                 <div class="col-md-12 text-center">
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
-                        <h1 id="title">Sticker Collections</h1><br />
+                        <h1 id="title">STICKER COLLECTIONS</h1><br />
                     </a>
                     <!-- /.logo -->
                 </div>
