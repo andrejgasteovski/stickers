@@ -73,6 +73,14 @@
         {
             padding-left: 20px;
         }
+        
+        .gallery-item
+        {
+            width:30%;
+            margin-left:auto;
+            margin-right:auto;
+            background-color: #ffebe1;  
+        }
     </style>
 
 
@@ -164,10 +172,23 @@
                 <div class="row">
 
                     <!-- prv red, slika 1 -->
-                    <div class="col-md-2 col-sm-6 col-md-offset-1" style="width: 26.666667%;">
+                   
                         <div class="gallery-item">
 
                             <asp:Image runat="server" ImageUrl="images/gallery/fifa-world-cup.jpg"/>
+
+
+                             <asp:Table ID="Table1" runat="server" CellPadding="20">
+                            <asp:TableRow>
+                                <asp:TableCell> <asp:Label ID="Label1" runat="server">Publisher:</asp:Label> </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label2" runat="server">Panini</asp:Label> </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell> <asp:Label ID="Label3" runat="server">Stickers:</asp:Label> </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label4" runat="server">158</asp:Label> </asp:TableCell>
+                            </asp:TableRow>
+                            </asp:Table>
+                    
                             <div class="overlay">
                                 <a href="images/gallery/fifa-world-cup.jpg" data-rel="lightbox" class="fa fa-expand">
                                 </a>
@@ -178,22 +199,12 @@
                             </div>
                         </div>
                         <!-- /.gallery-item -->
-                    </div>
+                    
                     
 
                     <!-- tekst do slika 1 -->
-                    <div class="col-md-2 col-sm-6 col-md-offset-1" style="margin-left: 0px;">
-                        <asp:Table runat="server" CellPadding="20">
-                            <asp:TableRow>
-                                <asp:TableCell> <asp:Label runat="server">Publisher:</asp:Label> </asp:TableCell>
-                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label1" runat="server">Panini</asp:Label> </asp:TableCell>
-                            </asp:TableRow>
-                            <asp:TableRow>
-                                <asp:TableCell> <asp:Label ID="Label2" runat="server">Stickers:</asp:Label> </asp:TableCell>
-                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label3" runat="server">158</asp:Label> </asp:TableCell>
-                            </asp:TableRow>
-                        </asp:Table>
-                    </div>
+                    
+                       
                     
                     <!-- prv red, slika 2 -->
                     <!--
@@ -217,7 +228,7 @@
                   
                     <!-- vtor red, slika 1 -->
                     <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-6 col-md-offset-2" style="margin-left: -43.66666%; margin-top: 19%; width: 26.666667%;">
+                    
                         <div class="gallery-item">
                             <div class="image">
                                 <div class="overlay">
@@ -232,7 +243,7 @@
                             </div>
                         </div>
                
-                    </div> 
+                   
 
 
                     <!-- vtor red, slika 2 -->
@@ -257,7 +268,7 @@
                     
                     <!-- treti red, slika 1 -->
                    
-                    <div class="col-md-2 col-sm-6 col-md-offset-3" style="margin-left: -43.66666%; margin-top: 38.5%; width: 26.666667%;">
+                    
                         <div class="gallery-item">
                             <div class="image">
                                 <div class="overlay">
@@ -272,7 +283,7 @@
                                 </h3>
                             </div>
                         </div>
-                    </div>
+                    
                    
 
 
