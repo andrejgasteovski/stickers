@@ -23,11 +23,27 @@
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
     <!-- ovde go pisuvam nasiot css -->
     <style type="text/css">
-         @font-face 
+	 @font-face
+        {
+            font-family: myTitleFont;
+            src: url(fonts/Raditad.ttf);
+        }
+        @font-face
         {
             font-family: myFirstFont;
             src: url(fonts/Quicksand-Bold.otf);
         }
+         .siteTitle
+        {
+            font-size: 50px;
+            color: White;
+            font-family: myTitleFont;
+        }
+        .content
+        {
+            font-family:myFirstFont;
+        }
+         
         .loginTextBox
         {
             font-size: 12px;
@@ -165,6 +181,9 @@
             </tr>
         </table>
         <div class="main-navigation">
+		<div class="siteTitle">STICKERS</div>
+        <br />
+        <br />
             <div class="responsive_menu">
                 <ul>
                     <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
