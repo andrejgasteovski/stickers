@@ -267,28 +267,28 @@
                                         <asp:Table ID="Table1" runat="server" CssClass="tableEdit">
                                             <asp:TableRow>
                                                 <asp:TableCell>First name</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox Style="margin: 5px" ID="tbFirstName" Height="35px" Width="115px" runat="server"></asp:TextBox></asp:TableCell>
+                                                    <asp:TextBox Style="margin: 5px" ID="tbFirstName" Height="35px" Width="115px" runat="server" ForeColor="Black"></asp:TextBox></asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>Last name</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbLastName" runat="server" Style="margin: 5px" Height="35px" Width="115px"></asp:TextBox>
+                                                    <asp:TextBox ID="tbLastName" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>Date of birth</asp:TableCell><asp:TableCell>
-                                                    <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server"  style="margin-left:4%"/>
-                                                    <asp:DropDownList ID="ddlMonth" runat="server" CssClass="ddlClass"/>
-                                                    <asp:DropDownList ID="ddlYear" runat="server" CssClass="ddlClass"/>
+                                                    <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server"  style="margin-left:4%" ForeColor="Black"/>
+                                                    <asp:DropDownList ID="ddlMonth" runat="server" CssClass="ddlClass" ForeColor="Black"/>
+                                                    <asp:DropDownList ID="ddlYear" runat="server" CssClass="ddlClass" ForeColor="Black"/>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>Location</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbLocation" runat="server" Style="margin: 5px" Height="35px" Width="115px"></asp:TextBox>
+                                                    <asp:TextBox ID="tbLocation" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>E-mail</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbEmail" runat="server" Style="margin: 5px" Height="35px" Width="115px"></asp:TextBox>
+                                                    <asp:TextBox ID="tbEmail" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                  
@@ -310,22 +310,22 @@
                                         <asp:Table ID="Table2" runat="server" CssClass="tableEdit">
                                             <asp:TableRow>
                                                 <asp:TableCell>Old Password</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox Style="margin: 5px" ID="tbOldPassword" Height="35px" Width="115px" runat="server" TextMode="Password"></asp:TextBox></asp:TableCell>
+                                                    <asp:TextBox Style="margin: 5px" ID="tbOldPassword" Height="35px" Width="115px" runat="server" TextMode="Password" ForeColor="Black"></asp:TextBox></asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>New password</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbNewPassword" runat="server" Style="margin: 5px" TextMode="Password" Height="35px" Width="115px"></asp:TextBox>
+                                                    <asp:TextBox ID="tbNewPassword" runat="server" Style="margin: 5px" TextMode="Password" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>Confirm new password</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbConfrimNewPassword" runat="server" Style="margin: 5px" TextMode="Password" Height="35px" Width="115px"></asp:TextBox>
+                                                    <asp:TextBox ID="tbConfrimNewPassword" runat="server" Style="margin: 5px" TextMode="Password" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>                                 
                                         </asp:Table>
                                     </div>
                                     <div style="text-align: center">
-                                        <asp:Button ID="btnSubmitChangePassword" runat="server" Text="Submit" CssClass="btnSubmit" onclick="btnSubmitChangePassword_Click"/>
+                                        <asp:Button ID="btnSubmitChangePassword" runat="server" Text="Submit" CssClass="btnSubmit" onclick="btnSubmitChangePassword_Click" ForeColor="Black"/>
                                     </div>
                                 </Content>
                             </asp:AccordionPane>

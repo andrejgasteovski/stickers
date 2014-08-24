@@ -179,13 +179,13 @@
                     <table align="center" id="login">
                         <tr class="row">
                             <td colspan="2">
-                                <asp:TextBox ID="tbEmail" runat="server"  placeholder="E-mail" Height="35px" Width="115px"></asp:TextBox>
+                                <asp:TextBox ID="tbEmail" runat="server"  placeholder="E-mail" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
                
                             <td colspan="2">
-                                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"  placeholder="Password" Height="35px" Width="115px"></asp:TextBox>
+                                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"  placeholder="Password" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
                             </td>
                         </tr>
                         <tr class="row">
