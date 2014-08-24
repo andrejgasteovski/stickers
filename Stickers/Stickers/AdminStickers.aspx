@@ -49,10 +49,11 @@
         <br />
                 <div class="responsive_menu">
                     <ul>
-                        <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                        <li><a class="show-2 templatemo_page2" href="#">Edit albums</a></li>
-                        <li><a class="show-3 templatemo_page3" href="#">Edit stickers</a></li>
-                        <li><a class="show-4 templatemo_page4" href="#">Edit users</a></li>
+
+                                <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Albums</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AdminAlbums.aspx">Edit albums</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/AdminStickers.aspx">Edit stickers</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/AdminUsers.aspx">Edit users</asp:HyperLink></li>
                     </ul>
                 </div>
                 <div class="container">
@@ -63,10 +64,11 @@
                         <!-- /.col-md-12 -->
                         <div class="col-md-12 main_menu">
                             <ul>
-                                <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
-                                <li><a class="show-2 templatemo_page2" href="#">Edit albums</a></li>
-                                <li><a class="show-3 templatemo_page3" href="#">Edit stickers</a></li>
-                                <li><a class="show-4 templatemo_page4" href="#">Edit users</a></li>
+                            
+                                <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Default.aspx">Albums</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/AdminAlbums.aspx">Edit albums</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/AdminStickers.aspx">Edit stickers</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/AdminUsers.aspx">Edit users</asp:HyperLink></li>
                             </ul>
                         </div>
                         <!-- /.col-md-12 -->

@@ -120,10 +120,10 @@
         <br />
             <div class="responsive_menu">
                 <ul>
-                    <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
-                    <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
+                     <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">ALBUMS</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/">BLOG</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/MyProfile.aspx">MY PROFILE</asp:HyperLink></li>
                 </ul>
             </div>
             <div class="container">
@@ -134,10 +134,10 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                            <li><a class="show-1 templatemo_home" href="#">ALBUMS</a></li>
-                            <li><a class="show-2 templatemo_page2" href="#">COLLECTORS</a></li>
-                            <li><a class="show-3 templatemo_page3" href="#">BLOG</a></li>
-                            <li><a class="show-4 templatemo_page4" href="#">MY PROFILE</a></li>
+                    <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Default.aspx">ALBUMS</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/">BLOG</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/MyProfile.aspx">MY PROFILE</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
