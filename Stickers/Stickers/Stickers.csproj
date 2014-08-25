@@ -56,6 +56,7 @@
     <Content Include="AdminAlbums.aspx" />
     <Content Include="AdminStickers.aspx" />
     <Content Include="AdminUsers.aspx" />
+    <Content Include="Blog.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Message.aspx" />
@@ -97,6 +98,13 @@
       <DependentUpon>AdminUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Album.cs" />
+    <Compile Include="Blog.aspx.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog.aspx.designer.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
