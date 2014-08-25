@@ -214,7 +214,8 @@ namespace Stickers
             Response.Redirect("StickersCollection.aspx");
         }
 
-        protected void Unnamed1_Click(object sender, EventArgs e)
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
         {
             Session["albumID"] = null;
             Session["userID"] = null;

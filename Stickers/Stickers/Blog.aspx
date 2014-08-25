@@ -91,7 +91,8 @@
     <div class="site-header">
         <div class="main-navigation">
         <span class="signOut">
-            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
+            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" 
+                onclick="btnSignOut_Click" />
         </span>
         <br />
         <div class="siteTitle">STICKERS</div>

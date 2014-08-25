@@ -190,5 +190,13 @@ namespace Stickers
             tbNewMessage.Text = "";
             initializeBlogWithDatabase();
         }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Session["albumID"] = null;
+            Session["userID"] = null;
+            Session["connection"] = null;
+            Response.Redirect("Default.aspx");
+        }
     }
 }

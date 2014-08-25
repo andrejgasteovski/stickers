@@ -126,7 +126,8 @@
         </table>
         <div class="main-navigation">
             <span class="signOut">
-                <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
+                <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" 
+                onclick="btnSignOut_Click" />
             </span>
             <br />
             <!-- tamara was here again -->
@@ -209,7 +210,7 @@
                                     <asp:Label ID="Label3" runat="server">Stickers:</asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="rightCell">
-                                    <asp:Label ID="Label4" runat="server">158</asp:Label>
+                                    <asp:Label ID="Label4" runat="server">639</asp:Label>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -245,13 +246,32 @@
                     <!-- vtor red, slika 1 -->
                     <!-- /.col-md-2 -->
                     <div class="gallery-item">
-                        <div class="image">
+                       <!-- <div class="image">  -->
+                        <asp:Image ID="Image2" runat="server" ImageUrl="images/gallery/uefa-champions-league.jpg" />
+                        <asp:Table ID="Table2" runat="server" CellPadding="20">
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <asp:Label ID="Label5" runat="server">Publisher:</asp:Label>
+                                </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell">
+                                    <asp:Label ID="Label6" runat="server">Panini</asp:Label>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <asp:Label ID="Label7" runat="server">Stickers:</asp:Label>
+                                </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell">
+                                    <asp:Label ID="Label8" runat="server">629</asp:Label>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
                             <div class="overlay">
                                 <a href="images/gallery/uefa-champions-league.jpg" data-rel="lightbox" class="fa fa-expand">
                                 </a>
                             </div>
-                            <asp:Image ID="Image1" runat="server" ImageUrl="images/gallery/uefa-champions-league.jpg" />
-                        </div>
+                          <!--  <asp:Image ID="Image1" runat="server" ImageUrl="images/gallery/uefa-champions-league.jpg" /> -->
+                      <!--  </div> -->
                         <div class="content-gallery">
                             <h3>
                                 UEFA Champions League 2014/15</h3>
@@ -277,19 +297,39 @@
                     -->
                     <!-- treti red, slika 1 -->
                     <div class="gallery-item">
-                        <div class="image">
+                      <!--  <div class="image"> -->
+                        <asp:Image ID="Image3" runat="server" ImageUrl="images/gallery/spiderman.jpg" />
+                        <asp:Table ID="Table3" runat="server" CellPadding="20">
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <asp:Label ID="Label9" runat="server">Publisher:</asp:Label>
+                                </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell">
+                                    <asp:Label ID="Label10" runat="server">Panini</asp:Label>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <asp:Label ID="Label11" runat="server">Stickers:</asp:Label>
+                                </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell">
+                                    <asp:Label ID="Label12" runat="server">192</asp:Label>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
                             <div class="overlay">
                                 <a href="images/gallery/gallery-item10.jpg" data-rel="lightbox" class="fa fa-expand">
                                 </a>
                             </div>
-                            <asp:Image ID="imgSpiderman" runat="server" src="images/gallery/spiderman.jpg" alt="The Amazing Spiderman 2" />
-                        </div>
+                       <!--     <asp:Image ID="imgSpiderman" runat="server" src="images/gallery/spiderman.jpg" alt="The Amazing Spiderman 2" /> -->
+                    <!--    </div> -->
                         <div class="content-gallery">
                             <h3>
                                 The Amazing Spiderman 2
                             </h3>
                         </div>
                     </div>
+
                     <!-- treti red, slika 2 -->
                     <!--
                     <div class="col-md-2 col-sm-6">

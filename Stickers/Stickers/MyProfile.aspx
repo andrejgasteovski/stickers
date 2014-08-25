@@ -208,15 +208,14 @@
             <tr>
                 <td>
                     <div>
-                        <asp:Button runat="server" Text="Log out" CssClass="logOut" ID="btnLogOut" 
-                            onclick="Unnamed1_Click"></asp:Button>
                     </div>
                 </td>
             </tr>
         </table>
         <div class="main-navigation">
         <span class="signOut">
-            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
+            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" 
+                onclick="btnSignOut_Click" />
         </span>
         <br />
 		<div class="siteTitle">STICKERS</div>
