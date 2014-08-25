@@ -303,6 +303,7 @@ namespace Stickers
                     string firstName = dr["firstName"].ToString();
                     string lastName = dr["lastName"].ToString();
                     ListItem li = new ListItem(firstName + " " + lastName, id.ToString());
+                    if (lbUsersDuplicates.Visible == false) lbUsersDuplicates.Visible = true;
                     lbUsersDuplicates.Items.Add(li);
                 }
             }
@@ -354,6 +355,7 @@ namespace Stickers
                     string firstName = dr["firstName"].ToString();
                     string lastName = dr["lastName"].ToString();
                     ListItem li = new ListItem(firstName + " " + lastName, id.ToString());
+                    if (lbUsersMissingStickers.Visible == false) lbUsersMissingStickers.Visible = true;
                     lbUsersMissingStickers.Items.Add(li);
                 }
             }

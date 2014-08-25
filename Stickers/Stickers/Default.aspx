@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Stickers.Default"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Stickers.Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="css/templatemo_style.css" />
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/ico/favicon.ico" />
-    
-    <!-- ovde go pisuvam nasiot css -->    
+    <!-- ovde go pisuvam nasiot css -->
     <style type="text/css">
         /* tamara was here */
         @font-face
@@ -36,7 +35,7 @@
         .siteTitle
         {
             font-size: 50px;
-            margin-left:20.5%;
+            margin-left: 20.5%;
             color: White;
             font-family: myTitleFont;
         }
@@ -76,78 +75,75 @@
         
         .gallery-item
         {
-            width:30%;
-            margin-left:auto;
-            margin-right:auto;
-            background-color: #ffebe1;  
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ffebe1;
         }
-          .signOut
+        .signOut
         {
-            float:right;
-            color:White;
+            float: right;
+            color: White;
         }
         #btnSignOut
         {
-            background-color:transparent;
-            border-width:2px ! important;
-            border-color:transparent ! important;
-            border-radius:5px;
-            margin-right:5px;
+            background-color: transparent;
+            border-width: 2px !important;
+            border-color: transparent !important;
+            border-radius: 5px;
+            margin-right: 5px;
         }
         
         #btnSignOut:hover
         {
-            background-color:transparent;
-            border:2px dotted #ffffff ! important;
-            
+            background-color: transparent;
+            border: 2px dotted #ffffff !important;
         }
     </style>
-
-
 </head>
 <body>
     <form id="form1" runat="server">
-  
     <div class="site-header">
-
         <table style="float: right; margin: 10px 10px -15px 10px;">
-        <!-- vo ovoj div se polinjata za login -->
+            <!-- vo ovoj div se polinjata za login -->
             <tr>
                 <td>
                     <div>
-                            <asp:TextBox id="tbEmail" cssclass="loginTextBox" runat="server" Placeholder="e-mail"></asp:TextBox>
-                            <asp:TextBox id="tbPassword" cssclass="loginTextBox" runat="server" Placeholder="password" TextMode="Password"></asp:TextBox>
-                            <asp:Button id="btnLogin" runat="server" Text="Login" CssClass="loginButton" 
-                                onclick="btnLogin_Click"/>
+                        <asp:TextBox ID="tbEmail" CssClass="loginTextBox" runat="server" Placeholder="e-mail"></asp:TextBox>
+                        <asp:TextBox ID="tbPassword" CssClass="loginTextBox" runat="server" Placeholder="password"
+                            TextMode="Password"></asp:TextBox>
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="loginButton" OnClick="btnLogin_Click" />
                     </div>
-                 </td>
+                </td>
             </tr>
             <tr>
                 <td>
                     <div>
-                        <asp:HyperLink NavigateUrl="signUp.aspx" runat="server" CssClass="signUp" 
-                            ClientIDMode="AutoID">Not a member? Sign up for free</asp:HyperLink>
+                        <asp:HyperLink NavigateUrl="signUp.aspx" runat="server" CssClass="signUp" ClientIDMode="AutoID">Not a member? Sign up for free</asp:HyperLink>
                     </div>
                 </td>
             </tr>
         </table>
-
-
         <div class="main-navigation">
-        <span class="signOut">
-            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
-        </span>
-        <br />
-          <!-- tamara was here again -->
-        <div class="siteTitle">ALBUMS</div>
-        <br />
-        <br />
+            <span class="signOut">
+                <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
+            </span>
+            <br />
+            <!-- tamara was here again -->
+            <div class="siteTitle">
+                ALBUMS</div>
+            <br />
+            <br />
             <div class="responsive_menu">
                 <ul>
-                     <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">ALBUMS</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/">BLOG</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/MyProfile.aspx">MY PROFILE</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">ALBUMS</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Blog.aspx">BLOG</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/MyProfile.aspx">MY PROFILE</asp:HyperLink></li>
                 </ul>
             </div>
             <div class="container">
@@ -158,10 +154,14 @@
                     <!-- /.col-md-12 -->
                     <div class="col-md-12 main_menu">
                         <ul>
-                    <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Default.aspx">ALBUMS</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/">BLOG</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/MyProfile.aspx">MY PROFILE</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Default.aspx">ALBUMS</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Blog.aspx">BLOG</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/MyProfile.aspx">MY PROFILE</asp:HyperLink></li>
                         </ul>
                     </div>
                     <!-- /.col-md-12 -->
@@ -176,7 +176,8 @@
                 <div class="col-md-12 text-center">
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
-                        <h1>STICKERS</h1>
+                        <h1>
+                            STICKERS</h1>
                     </a>
                     <!-- /.logo -->
                 </div>
@@ -187,49 +188,42 @@
         <!-- /.container -->
     </div>
     <!-- /.site-header -->
-
-
-
     <div id="menu-container" style="margin-left: auto; margin-right: auto; width: 65%;">
         <div class="content homepage" id="menu-1">
             <div class="container-fluid">
                 <div class="row">
-
                     <!-- prv red, slika 1 -->
-                   
-                        <div class="gallery-item">
-
-                            <asp:Image runat="server" ImageUrl="images/gallery/fifa-world-cup.jpg" />
-
-
-                             <asp:Table ID="Table1" runat="server" CellPadding="20">
+                    <div class="gallery-item">
+                        <asp:Image runat="server" ImageUrl="images/gallery/fifa-world-cup.jpg" />
+                        <asp:Table ID="Table1" runat="server" CellPadding="20">
                             <asp:TableRow>
-                                <asp:TableCell> <asp:Label ID="Label1" runat="server">Publisher:</asp:Label> </asp:TableCell>
-                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label2" runat="server">Panini</asp:Label> </asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:Label ID="Label1" runat="server">Publisher:</asp:Label>
+                                </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell">
+                                    <asp:Label ID="Label2" runat="server">Panini</asp:Label>
+                                </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell> <asp:Label ID="Label3" runat="server">Stickers:</asp:Label> </asp:TableCell>
-                                <asp:TableCell CssClass="rightCell"> <asp:Label ID="Label4" runat="server">158</asp:Label> </asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:Label ID="Label3" runat="server">Stickers:</asp:Label>
+                                </asp:TableCell>
+                                <asp:TableCell CssClass="rightCell">
+                                    <asp:Label ID="Label4" runat="server">158</asp:Label>
+                                </asp:TableCell>
                             </asp:TableRow>
-                            </asp:Table>
-                    
-                            <div class="overlay">
-                                <a href="images/gallery/fifa-world-cup.jpg" data-rel="lightbox" class="fa fa-expand">
-                                </a>
-                            </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    FIFA World Cup 2014</h3>
-                            </div>
+                        </asp:Table>
+                        <div class="overlay">
+                            <a href="images/gallery/fifa-world-cup.jpg" data-rel="lightbox" class="fa fa-expand">
+                            </a>
                         </div>
-                        <!-- /.gallery-item -->
-                    
-                    
-
+                        <div class="content-gallery">
+                            <h3>
+                                FIFA World Cup 2014</h3>
+                        </div>
+                    </div>
+                    <!-- /.gallery-item -->
                     <!-- tekst do slika 1 -->
-                    
-                       
-                    
                     <!-- prv red, slika 2 -->
                     <!--
                     <div class="col-md-2 col-sm-6">
@@ -248,28 +242,21 @@
                         </div>
                     </div>
                     -->
-
-                  
                     <!-- vtor red, slika 1 -->
                     <!-- /.col-md-2 -->
-                    
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/uefa-champions-league.jpg" data-rel="lightbox" class="fa fa-expand">
-                                    </a>
-                                </div>
-                                <asp:Image ID="Image1" runat="server" ImageUrl="images/gallery/uefa-champions-league.jpg"/>
+                    <div class="gallery-item">
+                        <div class="image">
+                            <div class="overlay">
+                                <a href="images/gallery/uefa-champions-league.jpg" data-rel="lightbox" class="fa fa-expand">
+                                </a>
                             </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    UEFA Champions League 2014/15</h3>
-                            </div>
+                            <asp:Image ID="Image1" runat="server" ImageUrl="images/gallery/uefa-champions-league.jpg" />
                         </div>
-               
-                   
-
-
+                        <div class="content-gallery">
+                            <h3>
+                                UEFA Champions League 2014/15</h3>
+                        </div>
+                    </div>
                     <!-- vtor red, slika 2 -->
                     <!--
                     <div class="col-md-2 col-sm-6">
@@ -288,29 +275,21 @@
                         </div>
                     </div>
                     -->
-
-                    
                     <!-- treti red, slika 1 -->
-                   
-                    
-                        <div class="gallery-item">
-                            <div class="image">
-                                <div class="overlay">
-                                    <a href="images/gallery/gallery-item10.jpg" data-rel="lightbox" class="fa fa-expand" >
-                                    </a>
-                                </div>
-                                <asp:Image ID="imgSpiderman" runat="server" src="images/gallery/spiderman.jpg" alt="The Amazing Spiderman 2"/>
+                    <div class="gallery-item">
+                        <div class="image">
+                            <div class="overlay">
+                                <a href="images/gallery/gallery-item10.jpg" data-rel="lightbox" class="fa fa-expand">
+                                </a>
                             </div>
-                            <div class="content-gallery">
-                                <h3>
-                                    The Amazing Spiderman 2
-                                </h3>
-                            </div>
+                            <asp:Image ID="imgSpiderman" runat="server" src="images/gallery/spiderman.jpg" alt="The Amazing Spiderman 2" />
                         </div>
-                    
-                   
-
-
+                        <div class="content-gallery">
+                            <h3>
+                                The Amazing Spiderman 2
+                            </h3>
+                        </div>
+                    </div>
                     <!-- treti red, slika 2 -->
                     <!--
                     <div class="col-md-2 col-sm-6">
@@ -329,8 +308,6 @@
                         </div>
                     </div>
                     -->
-
-
                     <!-- /.col-md-2 -->
                 </div>
                 <!-- /.row -->
@@ -355,8 +332,6 @@
         <br />
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
     </div>
-
-
     <!-- /#menu-container -->
     <div id="templatemo_footer">
         <div class="container">
@@ -373,7 +348,6 @@
     </div>
     <!-- /.templatemo_footer -->
     <!-- Scripts -->
-    
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="js/modernizr.js"></script>
@@ -381,7 +355,6 @@
     <script type="text/javascript" src="js/tabs.js"></script>
     <script type="text/javascript" src="js/jquery.lightbox.js"></script>
     <script type="text/javascript" src="js/templatemo_custom.js"></script>
-    
     </form>
 </body>
 </html>

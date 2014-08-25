@@ -30,37 +30,25 @@ namespace Stickers
         protected void Page_Load(object sender, EventArgs e)
         {
             //na krajot, ovoj if-else da se odkomentira
-            //if (Session["userID"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-            //    userID = Convert.ToInt32(Session["userID"].ToString());
-            //    connection = new SqlConnection();
-            //    connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
-            //}
+            if (Session["userID"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                userID = Convert.ToInt32(Session["userID"].ToString());
+                connection = new SqlConnection();
+                connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
+            }
 
-            //if (!this.IsPostBack)
-            //{
-            //    //na krajot, ovoj blok da se izbrise
-            //    {
-            //        userFirstName = "Sandra";
-            //        initializeWelcomeText();
-            //    }
-
-            //    //    //na krajot, ovoj blok da se odkomentira
-
-            //    {
-            //        initializeDateDropDownLists();
-            //        initializeUserData();
-            //        initializeWelcomeText();
-            //        initializeEditProfileAccordionPane();
-            //        initializeMyCollectionsPane();
-            //    }
-
-            //    //}
-            //}
+            if (!this.IsPostBack)
+            {
+                    initializeDateDropDownLists();
+                    initializeUserData();
+                    initializeWelcomeText();
+                    initializeEditProfileAccordionPane();
+                    initializeMyCollectionsPane();
+            }
         }
 
         private void initializeDateDropDownLists()
