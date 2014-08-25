@@ -35,7 +35,7 @@
         .siteTitle
         {
             font-size: 50px;
-            margin-left: 20.5%;
+            margin-left: 25%;
             color: White;
             font-family: myTitleFont;
         }
@@ -139,8 +139,8 @@
                 <ul>
                     <li>
                         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">ALBUMS</asp:HyperLink></li>
-                    <li>
-                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li>
+                   <!-- <li>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li> -->
                     <li>
                         <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Blog.aspx">BLOG</asp:HyperLink></li>
                     <li>
@@ -157,8 +157,8 @@
                         <ul>
                             <li>
                                 <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Default.aspx">ALBUMS</asp:HyperLink></li>
-                            <li>
-                                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li>
+                           <!-- <li>
+                                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/">COLLECTORS</asp:HyperLink></li> -->
                             <li>
                                 <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Blog.aspx">BLOG</asp:HyperLink></li>
                             <li>

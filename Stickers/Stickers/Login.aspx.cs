@@ -77,7 +77,7 @@ namespace Stickers
                 }
                 else
                 {
-                    lblMessage.Text = "Incorrect username or password";
+                    lblMessage.Text = "Incorrect username or password!";
                 }
             }
     
