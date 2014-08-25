@@ -34,15 +34,14 @@ namespace Stickers
 
             //na krajot, ovoj blok da se izbrise
             {
-                Session["userID"] = 2;
-                Response.Redirect("MyProfile.aspx");
+                //Session["userID"] = 3;
+                // Response.Redirect("Profile.aspx");
             }
 
-            //na krajot ovoj celiot blok da se odkomentira
-            /*
             {
-                string sqlQuery = "SELECT id, email, password FROM users";
+                string sqlQuery = "SELECT * FROM users";
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
+                int userType = 1;
 
                 try
                 {
@@ -60,6 +59,7 @@ namespace Stickers
                             {
                                 int userID = Convert.ToInt32(reader["id"].ToString());
                                 Session["userID"] = userID;
+                                userType = Convert.ToInt32(reader["userType"].ToString());
                             }
                         }
                     }
@@ -75,15 +75,20 @@ namespace Stickers
 
                 if (Session["userID"] != null)
                 {
-                    Response.Redirect("MyProfile.aspx");
+                    if (userType == 1)
+                        Response.Redirect("MyProfile.aspx");
+                    else if (userType == 2)
+                        Response.Redirect("AdminAlbums.aspx");
+                    else
+                        Response.Redirect("Default.aspx");
                 }
                 else
                 {
                     lblMessage.Text = "Incorrect username or password";
                 }
             }
-            */
-             
+
         }
+
     }
 }

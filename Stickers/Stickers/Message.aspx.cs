@@ -56,6 +56,7 @@ namespace Stickers
             {
                 initializeEmails();
                 initializeStickers();
+                initializeAlbumName();
                 initializeMessageTitle();
                 initializeMessageBody();
             }
@@ -141,6 +142,10 @@ namespace Stickers
             return sb.ToString();
         }
 
+        private void initializeAlbumName()
+        { 
+            // da se implementira nekogas
+        }
 
         private void initializeMessageTitle()
         {
@@ -175,9 +180,8 @@ namespace Stickers
                 EnableSsl = true
             };
             client.Send("stickers.team@gmail.com", recepientEmail, messageTitle, messageBody);
-            Console.WriteLine("Sent");
 
-            Console.ReadLine();
+            Response.Redirect("Profile.aspx?id=" + userProfileID);
         }
     }
 }

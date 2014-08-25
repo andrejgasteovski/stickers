@@ -54,6 +54,16 @@
             margin-left: auto;
             margin-right: auto;
             }
+            
+            .textBox
+            {   
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                overflow:auto;
+                margin: 10px;
+                border-radius:5px;
+                }
     </style>
 </head>
 <body>
@@ -102,12 +112,17 @@
                     <!-- /.logo -->
                 <div id="ph">
     
-                    <asp:Panel ID="panel" runat="server" CssClass="panel">
+                    <asp:Panel ID="panel" runat="server" CssClass="panel" ScrollBars="Vertical">
+                        
                     </asp:Panel>
     
                 </div>
+                        <asp:TextBox ID="tbNewMessage" runat="server" CssClass="textBox"></asp:TextBox>
+                    <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
+                        Text="Submit" />
             </div>
             <!-- /.row -->
+                <asp:Label ID="lblMessage" runat="server"></asp:Label>
         </div>
         <!-- /.container -->
     </div>

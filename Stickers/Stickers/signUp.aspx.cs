@@ -14,6 +14,9 @@ namespace Stickers
     {
         SqlConnection connection;
         public static readonly string INSERT_USER = "insert into users(email, password, firstName, lastName, location, dateOfBirth, dateOfCreatingAccount) values(@email, @password, @firstName, @lastName, @location, @dateOfBirth, (select current_timestamp))";
+        public static readonly string INSERT_ALBUM = "insert into albumCollections(userID, albumID, dateOfCollectionStart) values(@userID, @albumID, (select CURRENT_TIMESTAMP))";
+        public static readonly string SELECT_USER = "select * from users order by id desc";
+        public static readonly int NUM_ALBUMS = 3;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -82,7 +85,39 @@ namespace Stickers
                 connection.Close();
             }
 
+
+            createAlbumsForUser();
             Response.Redirect("Login.aspx");
+        }
+
+        private void createAlbumsForUser()
+        {
+            SqlCommand command = new SqlCommand(SELECT_USER, connection);
+            int userID = 0;
+            try{
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while(reader.Read())
+                {
+                    userID = Convert.ToInt32(reader["ID"].ToString());
+                    break;
+                }
+            }catch{}
+            finally{connection.Close();}
+
+            for(int i = 1; i <= 3; i++)
+            {
+                try{
+                    connection.Open();
+                    command = new SqlCommand(INSERT_ALBUM, connection);
+                    command.Parameters.AddWithValue("userID", userID);
+                    command.Parameters.AddWithValue("albumID", i);
+
+                    command.ExecuteNonQuery();
+
+                }catch{}
+                finally{connection.Close();}
+            }
         }
     }
 }

@@ -175,7 +175,7 @@
                    
                         <div class="gallery-item">
 
-                            <asp:Image runat="server" ImageUrl="images/gallery/fifa-world-cup.jpg"/>
+                            <asp:Image runat="server" ImageUrl="images/gallery/fifa-world-cup.jpg" />
 
 
                              <asp:Table ID="Table1" runat="server" CellPadding="20">
