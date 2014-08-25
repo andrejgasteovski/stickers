@@ -96,6 +96,7 @@ namespace Stickers
             finally {
                 conn.Close();
                 gvAlbums.SelectedIndex = -1;
+                gvAlbums.EditIndex = -1;
             }
             if (effect != 0) connect();
         }

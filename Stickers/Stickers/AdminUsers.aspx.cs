@@ -95,7 +95,8 @@ namespace Stickers
             command.Parameters.AddWithValue("@dateOfCreatingAccount", tbDateOfCreatingAccount.Text);
 
             // TextBox tbID = (TextBox)gvUsers.Rows[e.RowIndex].Cells[0].Controls[0];
-            command.Parameters.AddWithValue("@id", Convert.ToInt32(command.Parameters.AddWithValue("@id", Convert.ToInt32(gvUsers.Rows[e.RowIndex].Cells[0].Text))));
+            int id = Convert.ToInt32(gvUsers.Rows[e.RowIndex].Cells[0].Text);
+            command.Parameters.AddWithValue("@id", id);
 
 
             int effect = 0;
@@ -112,6 +113,7 @@ namespace Stickers
             {
                 conn.Close();
                 gvUsers.SelectedIndex = -1;
+                gvUsers.EditIndex = -1;
             }
             if (effect != 0) connect();
         }

@@ -97,6 +97,7 @@ namespace Stickers
             {
                 conn.Close();
                 gvStickers.SelectedIndex = -1;
+                gvStickers.EditIndex = -1;
             }
             if (effect != 0) connect();
         }

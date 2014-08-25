@@ -66,7 +66,8 @@
                                 <li><a class="show-1 templatemo_home" href="#">Albums</a></li>
                                 <li><a class="show-2 templatemo_page2" href="#">Edit albums</a></li>
                                 <li><a class="show-3 templatemo_page3" href="#">Edit stickers</a></li>
-                                <li><a class="show-4 templatemo_page4" href="#">Edit users</a></li>
+                            <!--    <li><a class="show-4 templatemo_page4" href="#">Edit users</a></li>-->
+                                <li><asp:HyperLink runat="server" NavigateUrl="~/AdminUsers.aspx">Edit users</asp:HyperLink></li>
                             </ul>
                         </div>
                         <!-- /.col-md-12 -->
