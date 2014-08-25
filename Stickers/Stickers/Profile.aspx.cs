@@ -50,7 +50,7 @@ namespace Stickers
                     initializeUserDetails();
                     initializeAlbumsList();
                 }
-                 * */
+                 */
 
                 //koga se raboti so baza, ova da se izbrise
                 initializeAllShit();
@@ -138,14 +138,11 @@ namespace Stickers
 
         protected void lbAlbumsCollected_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //koga ima baza, ova da se odkomentira
-            /*
-             * 
             int albumID = Convert.ToInt32(lbAlbumsCollected.SelectedValue);
             initializeStickersList(userProfileID, albumID);
             lbStickersFromAlbum.Visible = true;
             lbStickersFromAlbum.DataBind();
-            */
+            Session["albumID"] = albumID;   
         }
 
         private void initializeStickersList(int userID, int albumID)

@@ -92,5 +92,23 @@ namespace Stickers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox lbUsersMissingStickers;
+        
+        /// <summary>
+        /// btnVisitProfileDuplicate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVisitProfileDuplicate;
+        
+        /// <summary>
+        /// btnVisitProfileMissing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVisitProfileMissing;
     }
 }

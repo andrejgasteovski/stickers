@@ -283,6 +283,10 @@
                 <div class="row">
                
                 <!-- /.col-md-12 -->
+                    <asp:Button ID="btnVisitProfileDuplicate" runat="server" 
+                        onclick="btnVisitProfileDuplicate_Click" Text="Visit Profile D" />
+                    <asp:Button ID="btnVisitProfileMissing" runat="server" 
+                        onclick="btnVisitProfileMissing_Click" Text="Visit Profile M" />
             </div>
             </div>
             <!-- /.row -->

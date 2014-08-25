@@ -289,6 +289,7 @@ namespace Stickers
 
                 while (dr.Read())
                 {
+                    /*
                     User user = new User();
                     user.ID = Convert.ToInt32(dr["ID"].ToString());
                     user.firstName = dr["firstName"].ToString();
@@ -296,6 +297,13 @@ namespace Stickers
                     user.location = dr["location"].ToString();
                     user.password = dr["password"].ToString();
                     users.Add(user);
+                    */
+
+                    int id = Convert.ToInt32(dr["ID"].ToString());
+                    string firstName = dr["firstName"].ToString();
+                    string lastName = dr["lastName"].ToString();
+                    ListItem li = new ListItem(firstName + " " + lastName, id.ToString());
+                    lbUsersDuplicates.Items.Add(li);
                 }
             }
             catch (Exception err)
@@ -307,7 +315,7 @@ namespace Stickers
                 connection.Close();
             }
 
-            lbUsersDuplicates.DataSource = users;
+            //lbUsersDuplicates.DataSource = users;
             lbUsersDuplicates.DataBind();
         }
 
@@ -332,6 +340,7 @@ namespace Stickers
 
                 while (dr.Read())
                 {
+                    /*
                     User user = new User();
                     user.ID = Convert.ToInt32(dr["ID"].ToString());
                     user.firstName = dr["firstName"].ToString();
@@ -339,6 +348,13 @@ namespace Stickers
                     user.location = dr["location"].ToString();
                     user.password = dr["password"].ToString();
                     users.Add(user);
+                    */
+
+                    int id = Convert.ToInt32(dr["ID"].ToString());
+                    string firstName = dr["firstName"].ToString();
+                    string lastName = dr["lastName"].ToString();
+                    ListItem li = new ListItem(firstName + " " + lastName, id.ToString());
+                    lbUsersMissingStickers.Items.Add(li);
                 }
             }
             catch (Exception err)
@@ -350,7 +366,7 @@ namespace Stickers
                 connection.Close();
             }
 
-            lbUsersMissingStickers.DataSource = users;
+            //lbUsersMissingStickers.DataSource = users;
             lbUsersMissingStickers.DataBind();
         }
 
@@ -424,6 +440,20 @@ namespace Stickers
             {
                 connection.Close();
             }
+        }
+
+        protected void btnVisitProfileDuplicate_Click(object sender, EventArgs e)
+        {
+            string selectedUserID = lbUsersDuplicates.SelectedValue;
+            if(selectedUserID != "")
+                Response.Redirect("Profile.aspx?id=" + selectedUserID);
+        }
+
+        protected void btnVisitProfileMissing_Click(object sender, EventArgs e)
+        {
+            string selectedUserID = lbUsersMissingStickers.SelectedValue;
+            if (selectedUserID != "")
+                Response.Redirect("Profile.aspx?id=" + selectedUserID);
         }
     }
 }

@@ -69,6 +69,15 @@
             color: White;
         }
         
+        .logOut
+        {
+            font-size: 12px;
+            color: White;
+            background: transparent;
+            border: 0px;
+            
+        }
+        
         .rightCell
         {
             padding-left: 20px;
@@ -175,7 +184,8 @@
             <tr>
                 <td>
                     <div>
-                        <asp:HyperLink runat="server" Text="Log out" CssClass="signUp"></asp:HyperLink>
+                        <asp:Button runat="server" Text="Log out" CssClass="logOut" ID="btnLogOut" 
+                            onclick="Unnamed1_Click"></asp:Button>
                     </div>
                 </td>
             </tr>
