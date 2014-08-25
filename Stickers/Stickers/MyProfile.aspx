@@ -133,12 +133,12 @@
             border-color:#FF5151;
             color:White;
             border-radius:5px;
-            width: 60%;
+            width: 70%;
             height:45px;
         }
         .btnEdit:hover
         {
-            width: 65%;
+            width: 75%;
             height:53px;
         }
         .ddlClass
@@ -164,6 +164,30 @@
             border: 3px dotted  #b10021;
             border-radius:5px;
             text-align:center;
+        }
+          .signOut
+        {
+            float:right;
+            color:White;
+        }
+        #btnSignOut
+        {
+            background-color:transparent;
+            border-width:2px ! important;
+            border-color:transparent ! important;
+            border-radius:5px;
+            margin-right:5px;
+        }
+        
+        #btnSignOut:hover
+        {
+            background-color:transparent;
+            border:2px dotted #ffffff ! important;
+            
+        }
+        #btnSubmitChangePassword
+        {
+            color:White;
         }
     </style>
 </head>
@@ -191,6 +215,10 @@
             </tr>
         </table>
         <div class="main-navigation">
+        <span class="signOut">
+            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
+        </span>
+        <br />
 		<div class="siteTitle">STICKERS</div>
         <br />
         <br />
@@ -229,7 +257,7 @@
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
                         <h1>
-                            My profile</h1>
+                            MY PROFILE</h1>
                     </a>
                     <!-- /.logo -->
                 </div>
@@ -252,9 +280,9 @@
                                     My Collections</Header>
                                 <Content>
                                     <div id="centar">
-                                        <asp:ListBox ID="lbCollections" runat="server" CssClass="lbClass"></asp:ListBox><br /><br />
+                                        <asp:ListBox ID="lbCollections" runat="server" CssClass="lbClass" ForeColor="#777777"></asp:ListBox><br /><br />
                                         <div id="tmp">
-                                        <asp:Button ID="btnEditAlbum" runat="server" Text="Edit Album" CssClass="btnEdit" OnClick="btnEditAlbum_Click"/>
+                                        <asp:Button ID="btnEditAlbum" runat="server" Text="EDIT ALBUM" CssClass="btnEdit" OnClick="btnEditAlbum_Click"/>
                                         </div>
                                     </div>
                                 </Content>
@@ -267,35 +295,35 @@
                                         <asp:Table ID="Table1" runat="server" CssClass="tableEdit">
                                             <asp:TableRow>
                                                 <asp:TableCell>First name</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox Style="margin: 5px" ID="tbFirstName" Height="35px" Width="115px" runat="server" ForeColor="Black"></asp:TextBox></asp:TableCell>
+                                                    <asp:TextBox Style="margin: 5px" ID="tbFirstName" Height="35px" Width="115px" runat="server" ForeColor="#777777" ></asp:TextBox></asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>Last name</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbLastName" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
+                                                    <asp:TextBox ID="tbLastName" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="#777777"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>Date of birth</asp:TableCell><asp:TableCell>
-                                                    <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server"  style="margin-left:4%" ForeColor="Black"/>
-                                                    <asp:DropDownList ID="ddlMonth" runat="server" CssClass="ddlClass" ForeColor="Black"/>
-                                                    <asp:DropDownList ID="ddlYear" runat="server" CssClass="ddlClass" ForeColor="Black"/>
+                                                    <asp:DropDownList CssClass="ddlClass" ID="ddlDay" runat="server"  style="margin-left:4%" ForeColor="#777777"/>
+                                                    <asp:DropDownList ID="ddlMonth" runat="server" CssClass="ddlClass" ForeColor="#777777"/>
+                                                    <asp:DropDownList ID="ddlYear" runat="server" CssClass="ddlClass" ForeColor="#777777"/>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>Location</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbLocation" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
+                                                    <asp:TextBox ID="tbLocation" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="#777777"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>E-mail</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbEmail" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
+                                                    <asp:TextBox ID="tbEmail" runat="server" Style="margin: 5px" Height="35px" Width="115px" ForeColor="#777777"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                  
                                         </asp:Table>
                                     </div>
                                     <div style="text-align: center">
-                                        <asp:Button ID="btnSubmitEditProfile" runat="server" Text="Submit"  onclick="btnSubmitEditProfile_Click"  CssClass="btnSubmit"/>
+                                        <asp:Button ID="btnSubmitEditProfile" runat="server" Text="SUBMIT"  onclick="btnSubmitEditProfile_Click"  CssClass="btnSubmit"/>
                                     <!--BackColor="#00675F"
                                             BorderColor="#FF5151" ForeColor="White" onclick="btnSubmitEditProfile_Click" -->
 									</div>
@@ -310,22 +338,22 @@
                                         <asp:Table ID="Table2" runat="server" CssClass="tableEdit">
                                             <asp:TableRow>
                                                 <asp:TableCell>Old Password</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox Style="margin: 5px" ID="tbOldPassword" Height="35px" Width="115px" runat="server" TextMode="Password" ForeColor="Black"></asp:TextBox></asp:TableCell>
+                                                    <asp:TextBox Style="margin: 5px" ID="tbOldPassword" Height="35px" Width="115px" runat="server" TextMode="Password" ForeColor="#777777"></asp:TextBox></asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>New password</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbNewPassword" runat="server" Style="margin: 5px" TextMode="Password" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
+                                                    <asp:TextBox ID="tbNewPassword" runat="server" Style="margin: 5px" TextMode="Password" Height="35px" Width="115px" ForeColor="#777777"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>
                                             <asp:TableRow>
                                                 <asp:TableCell>Confirm new password</asp:TableCell><asp:TableCell>
-                                                    <asp:TextBox ID="tbConfrimNewPassword" runat="server" Style="margin: 5px" TextMode="Password" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
+                                                    <asp:TextBox ID="tbConfrimNewPassword" runat="server" Style="margin: 5px" TextMode="Password" Height="35px" Width="115px" ForeColor="#777777"></asp:TextBox>
                                                 </asp:TableCell>
                                             </asp:TableRow>                                 
                                         </asp:Table>
                                     </div>
                                     <div style="text-align: center">
-                                        <asp:Button ID="btnSubmitChangePassword" runat="server" Text="Submit" CssClass="btnSubmit" onclick="btnSubmitChangePassword_Click" ForeColor="Black"/>
+                                        <asp:Button ID="btnSubmitChangePassword" runat="server" Text="SUBMIT" CssClass="btnSubmit" onclick="btnSubmitChangePassword_Click"/>
                                     </div>
                                 </Content>
                             </asp:AccordionPane>

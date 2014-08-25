@@ -38,12 +38,36 @@
             color: White;
             font-family: myTitleFont;
         }
+          .signOut
+        {
+            float:right;
+            color:White;
+        }
+        #btnSignOut
+        {
+            background-color:transparent;
+            border-width:2px ! important;
+            border-color:transparent ! important;
+            border-radius:5px;
+            margin-right:5px;
+        }
+        
+        #btnSignOut:hover
+        {
+            background-color:transparent;
+            border:2px dotted #ffffff ! important;
+            
+        }
 		</style>
     </head>
     <body>
         <form id="form2" runat="server">
         <div class="site-header">
             <div class="main-navigation">
+            <span class="signOut">
+            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
+        </span>
+        <br />
 			<div class="siteTitle">STICKERS</div>
         <br />
         <br />
@@ -83,7 +107,7 @@
                     <div class="col-md-12 text-center">
                         <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                             class="templatemo_logo">
-                            <h1 id="title">Edit stickers</h1>
+                            <h1 id="title">EDIT STICKERS</h1>
                             <br />
                         </a>
                         <!-- /.logo -->

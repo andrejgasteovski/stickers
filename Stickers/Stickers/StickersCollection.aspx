@@ -182,6 +182,26 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .signOut
+        {
+            float:right;
+            color:White;
+        }
+        #btnSignOut
+        {
+            background-color:transparent;
+            border-width:2px ! important;
+            border-color:transparent ! important;
+            border-radius:5px;
+            margin-right:5px;
+        }
+        
+        #btnSignOut:hover
+        {
+            background-color:transparent;
+            border:2px dotted #ffffff ! important;
+            
+        }
         
         
     </style>
@@ -192,6 +212,10 @@
     <div class="site-header">
         <div class="main-navigation">
          <!-- tamara was here again -->
+        <span class="signOut">
+            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
+        </span>
+        <br />
         <div class="siteTitle">STICKERS</div>
         <br />
         <br />

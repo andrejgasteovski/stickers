@@ -62,6 +62,26 @@
             border-radius:5px;
             width:55%;
         }
+          .signOut
+        {
+            float:right;
+            color:White;
+        }
+        #btnSignOut
+        {
+            background-color:transparent;
+            border-width:2px ! important;
+            border-color:transparent ! important;
+            border-radius:5px;
+            margin-right:5px;
+        }
+        
+        #btnSignOut:hover
+        {
+            background-color:transparent;
+            border:2px dotted #ffffff ! important;
+            
+        }
     </style>
 </head>
 <body>
@@ -69,6 +89,10 @@
     <div class="site-header">
         <div class="main-navigation">
          <!-- tamara was here again -->
+         <span class="signOut">
+            <asp:Button ID="btnSignOut" runat="server" Text="SIGN OUT" />
+        </span>
+        <br />
         <div class="siteTitle">STICKERS</div>
         <br />
         <br />
@@ -112,7 +136,7 @@
                     <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_397_concept"
                         class="templatemo_logo">
                         <h1 id="title">
-                            STICKERS</h1>
+                            USER'S PROFILE</h1>
                         <br />
                     </a>
                     <!-- /.logo -->

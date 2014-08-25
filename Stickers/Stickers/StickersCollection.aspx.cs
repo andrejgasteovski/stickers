@@ -33,7 +33,7 @@ namespace Stickers
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //koga se raboti so baza, ovoj blok da se odkomentira
+           // koga se raboti so baza, ovoj blok da se odkomentira
 
             {
                 if (Session["userID"] == null || Session["albumID"] == null)
