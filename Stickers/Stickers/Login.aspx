@@ -180,6 +180,7 @@
                         <tr class="row">
                             <td colspan="2">
                                 <asp:TextBox ID="tbEmail" runat="server"  placeholder="E-mail" Height="35px" Width="115px" ForeColor="Black"></asp:TextBox>
+                                
                             </td>
                         </tr>
                         <tr class="row">
@@ -190,10 +191,22 @@
                         </tr>
                         <tr class="row">
                             <td colspan="2">
+                                
                                 <asp:Button ID="btnLogin" runat="server" Text="Login" onclick="btnLogin_Click"></asp:Button>
                             </td>
                         </tr>
                     </table>
+
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                    ControlToValidate="tbEmail" ErrorMessage="Enter email!" ForeColor="Red"></asp:RequiredFieldValidator><br/>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                                    ControlToValidate="tbEmail" ErrorMessage="Email Address in invalid format!" 
+                                    ForeColor="Red" 
+                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator><br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                    ControlToValidate="tbPassword" ErrorMessage="RequiredFieldValidator" 
+                                    ForeColor="Red">Enter password!</asp:RequiredFieldValidator>
+
                 </div>
                 <!-- /.col-md-12 -->
             </div>

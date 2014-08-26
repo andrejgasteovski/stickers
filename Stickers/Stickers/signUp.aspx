@@ -140,17 +140,13 @@
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbFirstName" placeholder="First name" runat="server" class="signUpTextBoxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                    ControlToValidate="tbFirstName" Display="Dynamic" ErrorMessage="Enter name!" 
-                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                                
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbLastName" placeholder="Last name" runat="server" class="signUpTextBoxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                                    ControlToValidate="tbLastName" Display="Dynamic" ErrorMessage="Enter surname!" 
-                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                                
                             </td>
                         </tr>
                         <tr class="row">
@@ -167,46 +163,33 @@
                                 </asp:DropDownList>
                                 <asp:DropDownList ID="ddlYear" runat="server" ValidationGroup="dateGroup">
                                 </asp:DropDownList>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                                    ControlToValidate="ddlDay" Display="Dynamic" ErrorMessage="Enter date!" 
-                                    ForeColor="Red" ValidationGroup="dateGroup"></asp:RequiredFieldValidator>
+                                
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbLocation" placeholder="Location" runat="server" class="signUpTextBoxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                                    ControlToValidate="tbLocation" Display="Dynamic" ErrorMessage="Enter location!" 
-                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                                
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbEmail" placeholder="e-mail" runat="server" class="signUpTextBoxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                                    ControlToValidate="tbEmail" Display="Dynamic" ErrorMessage="Enter e-mail!" 
-                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                                
                             </td>
                         </tr>
                         <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbPassword" placeholder="Password" runat="server" 
                                     TextMode="Password" class="signUpTextBoxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                                    ControlToValidate="tbPassword" Display="Dynamic" ErrorMessage="Enter password!" 
-                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                                
                             </td>
                         </tr>
                          <tr class="row">
                             <td>
                                 <asp:TextBox ID="tbPasswordConfirm" placeholder="Re-enter password" runat="server" 
                                     TextMode="Password" class="signUpTextBoxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
-                                    ControlToValidate="tbPasswordConfirm" Display="Dynamic" ErrorMessage="Re-enter password!" 
-                                    ForeColor="Red"></asp:RequiredFieldValidator>
-                                <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                                    ControlToCompare="tbPassword" ControlToValidate="tbPasswordConfirm" 
-                                    Display="Dynamic" ErrorMessage="Enter the same password!" ForeColor="Red"></asp:CompareValidator>
+                                
                             </td>
                         </tr>
                         <tr class="row">
@@ -218,9 +201,40 @@
                         </tr>
                       
                     </table>
+                    
                     <br />
                     <br />
                     </div>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                    ControlToValidate="tbFirstName" Display="Dynamic" ErrorMessage="Enter name!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator><br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                    ControlToValidate="tbLastName" Display="Dynamic" ErrorMessage="Enter surname!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                    ControlToValidate="ddlDay" Display="Dynamic" ErrorMessage="Enter date!" 
+                                    ForeColor="Red" ValidationGroup="dateGroup"></asp:RequiredFieldValidator><br />
+                                    
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                    ControlToValidate="tbPassword" Display="Dynamic" ErrorMessage="Enter password!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator><br />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                                    ControlToValidate="tbPasswordConfirm" Display="Dynamic" ErrorMessage="Re-enter password!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator><br />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                    ControlToValidate="tbLocation" Display="Dynamic" ErrorMessage="Enter location!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator><br />
+                                    
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                                    ControlToCompare="tbPassword" ControlToValidate="tbPasswordConfirm" 
+                                    Display="Dynamic" ErrorMessage="Enter the same password!" ForeColor="Red"></asp:CompareValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                    ControlToValidate="tbEmail" Display="Dynamic" ErrorMessage="Enter e-mail!" 
+                                    ForeColor="Red"></asp:RequiredFieldValidator><br />
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                                    ErrorMessage="Email Address in invalid format!" 
+                                    ControlToValidate="tbEmail" ForeColor="Red" 
+                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator><br />
                 </div>
                 <!-- /.col-md-12 -->
             </div>
