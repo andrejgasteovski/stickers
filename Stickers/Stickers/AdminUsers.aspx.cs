@@ -16,6 +16,9 @@ namespace Stickers
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userID"] == null)
+                Response.Redirect("Login.aspx");
+
             conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
 

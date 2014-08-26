@@ -41,6 +41,9 @@ namespace Stickers
                 albumID = Convert.ToInt32(Session["albumID"].ToString());
             }
             */
+            if (Session["userID"] == null)
+                Response.Redirect("Login.aspx");
+
 
             //koga se raboti so baza, ova da se izbrise
             {

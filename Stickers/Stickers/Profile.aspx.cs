@@ -36,6 +36,11 @@ namespace Stickers
             }
             */
 
+            if (Session["userID"] == null)
+                Response.Redirect("Login.aspx");
+
+
+
             userProfileID = 2;
             userID = 3;
 
