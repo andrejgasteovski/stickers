@@ -259,6 +259,7 @@ namespace Stickers
         */
         private void updateListUsersWithDuplicates(List<Sticker> selectedStickers)
         {
+            lbUsersDuplicates.Items.Clear();
             List<User> users = new List<User>();
 
             string duplicateStickersString = "";
@@ -322,7 +323,8 @@ namespace Stickers
 
 
         private void updateListUsersMisssingStickers(List<Sticker> selectedStickers)
-        { 
+        {
+            lbUsersMissingStickers.Items.Clear();
             List<User> users = new List<User>();
             string selectedStickersString = "";
             foreach (Sticker s in selectedStickers)
@@ -398,6 +400,8 @@ namespace Stickers
 
             ViewState["selectedStickers"] = null;
             lbSelected.Items.Clear();
+            lbUsersDuplicates.Items.Clear();
+            lbUsersMissingStickers.Items.Clear();
             BindListView();
         }
 
@@ -424,6 +428,8 @@ namespace Stickers
 
             ViewState["selectedStickers"] = null;
             lbSelected.Items.Clear();
+            lbUsersDuplicates.Items.Clear();
+            lbUsersMissingStickers.Items.Clear();
             BindListView();
         }
 

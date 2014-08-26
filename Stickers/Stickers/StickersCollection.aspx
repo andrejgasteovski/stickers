@@ -297,23 +297,23 @@
                         BorderStyle="Solid" BorderWidth="4px" >
                         <asp:TableRow BorderColor="#B10021" BorderStyle="Dotted" BorderWidth="3px">
                             <asp:TableCell ColumnSpan="2">
-                                <asp:Label ID="Label3" runat="server" Text="Agenda:" Font-Bold="True" Font-Size="Larger"></asp:Label></asp:TableCell>
+                                <asp:Label ID="Label3" runat="server" Text="Legend:" Font-Bold="True" Font-Size="Larger"></asp:Label></asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell HorizontalAlign="Left" cssClass="cellCss">
                                 <asp:Label runat="server" Text="Missing stickers:"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell><asp:Button runat="server" Text="0" CssClass="stickerMissing" Width="40%"/></asp:TableCell>
+                            <asp:TableCell><asp:Button runat="server" Text="" CssClass="stickerMissing" Width="40%"/></asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell HorizontalAlign="Left" cssClass="cellCss">
                                 <asp:Label ID="Label4" runat="server" Text="Duplicate stickers:"></asp:Label></asp:TableCell>
-                                <asp:TableCell><asp:Button ID="Button1" Text="0" runat="server" CssClass="stickerDuplicate" Width="40%"/></asp:TableCell>
+                                <asp:TableCell><asp:Button ID="Button1" Text="" runat="server" CssClass="stickerDuplicate" Width="40%"/></asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell HorizontalAlign="Left" cssClass="cellCss">
                                 <asp:Label ID="Label5" runat="server" Text="Collected stickers:"></asp:Label></asp:TableCell>
-                            <asp:TableCell><asp:Button ID="Button2" Text="0" runat="server" CssClass="stickerCollected" Width="40%"/></asp:TableCell>    
+                            <asp:TableCell><asp:Button ID="Button2" Text="" runat="server" CssClass="stickerCollected" Width="40%"/></asp:TableCell>    
                         </asp:TableRow>
                     </asp:Table>
                 </center>

@@ -34,23 +34,14 @@ namespace Stickers
         protected void Page_Load(object sender, EventArgs e)
         {
             // na kraj ova da se odkomentira
-            /*
             {
                 userID = Convert.ToInt32(Session["userID"].ToString());
                 userProfileID = Convert.ToInt32(Session["userProfileID"].ToString());
                 albumID = Convert.ToInt32(Session["albumID"].ToString());
             }
-            */
+            
             if (Session["userID"] == null)
                 Response.Redirect("Login.aspx");
-
-
-            //koga se raboti so baza, ova da se izbrise
-            {
-                userProfileID = 2;
-                userID = 3;
-                albumID = 1;
-            }
 
             connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;

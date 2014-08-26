@@ -119,7 +119,7 @@
             <tr>
                 <td>
                     <div>
-                        <asp:HyperLink NavigateUrl="signUp.aspx" runat="server" CssClass="signUp" ClientIDMode="AutoID">Not a member? Sign up for free</asp:HyperLink>
+                        <asp:HyperLink id="hlSignUp" NavigateUrl="signUp.aspx" runat="server" CssClass="signUp" ClientIDMode="AutoID">Not a member? Sign up for free</asp:HyperLink>
                     </div>
                 </td>
             </tr>

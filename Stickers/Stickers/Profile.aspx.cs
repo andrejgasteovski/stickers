@@ -25,7 +25,7 @@ namespace Stickers
         {
 
             // na kraj ova da se odkomentira
-            /*
+            
             {
                 if (Request.QueryString[0] != null)
                     userProfileID = Convert.ToInt32(Request.QueryString[0]);
@@ -34,15 +34,9 @@ namespace Stickers
 
                 userID = Convert.ToInt32(Session["userID"].ToString());
             }
-            */
-
+            
             if (Session["userID"] == null)
                 Response.Redirect("Login.aspx");
-
-
-
-            userProfileID = 2;
-            userID = 3;
 
             connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
@@ -50,15 +44,10 @@ namespace Stickers
             if (!this.IsPostBack)
             {
                 //koga se raboti so baza ovoj blok da se odkokmentira
-                /*
                 {
                     initializeUserDetails();
                     initializeAlbumsList();
                 }
-                 */
-
-                //koga se raboti so baza, ova da se izbrise
-                initializeAllShit();
             }
             
             

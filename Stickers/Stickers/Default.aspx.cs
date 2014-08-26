@@ -21,6 +21,22 @@ namespace Stickers
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["StickersDbConnection"].ConnectionString;
             Session["connection"] = connection;
 
+            if (Session["userID"] == null)
+            {
+                btnSignOut.Visible = false;
+                tbEmail.Visible = true;
+                tbPassword.Visible = true;
+                btnLogin.Visible = true;
+                hlSignUp.Visible = true;
+            }
+            else
+            {
+                btnSignOut.Visible = true;
+                tbEmail.Visible = false;
+                tbPassword.Visible = false;
+                btnLogin.Visible = false;
+                hlSignUp.Visible = false;
+            }
             if (!this.IsPostBack)
             {
    
@@ -31,12 +47,6 @@ namespace Stickers
         {
             string email = tbEmail.Text;
             string password = tbPassword.Text;
-
-            //na krajot, ovoj blok da se izbrise
-            {
-                //Session["userID"] = 3;
-                // Response.Redirect("Profile.aspx");
-            }
 
             {
                 string sqlQuery = "SELECT * FROM users";
